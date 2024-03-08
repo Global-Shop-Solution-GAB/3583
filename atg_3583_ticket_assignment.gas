@@ -1,0 +1,444 @@
+Program.Sub.ScreenSU.Start
+gui.F_TicketAssignment..create
+gui.F_TicketAssignment..caption("Ticket Assignment")
+gui.F_TicketAssignment..size(3400,2550)
+gui.F_TicketAssignment..position(0,0)
+gui.F_TicketAssignment..event(unload,f_ticketassignment_unload)
+gui.F_TicketAssignment..alwaysontop(False)
+gui.F_TicketAssignment..fontname("Arial")
+gui.F_TicketAssignment..fontsize(8)
+gui.F_TicketAssignment..forecolor(0)
+gui.F_TicketAssignment..fontstyle(,,,,)
+gui.F_TicketAssignment..BackColor(-2147483633)
+gui.F_TicketAssignment..controlbox(True)
+gui.F_TicketAssignment..maxbutton(False)
+gui.F_TicketAssignment..minbutton(True)
+gui.F_TicketAssignment..mousepointer(0)
+gui.F_TicketAssignment..moveable(True)
+gui.F_TicketAssignment..sizeable(False)
+gui.F_TicketAssignment..ShowInTaskBar(True)
+gui.F_TicketAssignment..titlebar(True)
+gui.F_TicketAssignment.cmdUnassign.create(button)
+gui.F_TicketAssignment.cmdUnassign.caption("Unassign")
+gui.F_TicketAssignment.cmdUnassign.visible(True)
+gui.F_TicketAssignment.cmdUnassign.size(1000,375)
+gui.F_TicketAssignment.cmdUnassign.zorder(0)
+gui.F_TicketAssignment.cmdUnassign.position(1300,1600)
+gui.F_TicketAssignment.cmdUnassign.enabled(True)
+gui.F_TicketAssignment.cmdUnassign.fontname("Arial")
+gui.F_TicketAssignment.cmdUnassign.fontsize(8)
+gui.F_TicketAssignment.cmdUnassign.event(click,cmdunassign_click)
+gui.F_TicketAssignment.cmdAssign.create(button)
+gui.F_TicketAssignment.cmdAssign.caption("Assign")
+gui.F_TicketAssignment.cmdAssign.visible(True)
+gui.F_TicketAssignment.cmdAssign.size(1000,375)
+gui.F_TicketAssignment.cmdAssign.zorder(0)
+gui.F_TicketAssignment.cmdAssign.position(200,1600)
+gui.F_TicketAssignment.cmdAssign.enabled(True)
+gui.F_TicketAssignment.cmdAssign.fontname("Arial")
+gui.F_TicketAssignment.cmdAssign.fontsize(8)
+gui.F_TicketAssignment.cmdAssign.event(click,cmdassign_click)
+gui.F_TicketAssignment.cmdEmployee.create(button)
+gui.F_TicketAssignment.cmdEmployee.caption("^")
+gui.F_TicketAssignment.cmdEmployee.visible(True)
+gui.F_TicketAssignment.cmdEmployee.size(300,300)
+gui.F_TicketAssignment.cmdEmployee.zorder(0)
+gui.F_TicketAssignment.cmdEmployee.position(2800,1100)
+gui.F_TicketAssignment.cmdEmployee.enabled(True)
+gui.F_TicketAssignment.cmdEmployee.fontname("Arial")
+gui.F_TicketAssignment.cmdEmployee.fontsize(8)
+gui.F_TicketAssignment.cmdEmployee.event(click,cmdemployee_click)
+gui.F_TicketAssignment.cmdLine.create(button)
+gui.F_TicketAssignment.cmdLine.caption("^")
+gui.F_TicketAssignment.cmdLine.visible(True)
+gui.F_TicketAssignment.cmdLine.size(300,300)
+gui.F_TicketAssignment.cmdLine.zorder(0)
+gui.F_TicketAssignment.cmdLine.position(2785,400)
+gui.F_TicketAssignment.cmdLine.enabled(True)
+gui.F_TicketAssignment.cmdLine.fontname("Arial")
+gui.F_TicketAssignment.cmdLine.fontsize(8)
+gui.F_TicketAssignment.cmdLine.event(click,cmdline_click)
+gui.F_TicketAssignment.txtLineNo.create(textbox,"",True,1200,300,0,1500,400,False,0,Arial,8,-2147483643,1)
+gui.F_TicketAssignment.txtEmployee.create(textbox,"",True,2500,300,0,200,1100,False,0,Arial,8,-2147483643,1)
+gui.F_TicketAssignment.lblEmployee.create(label,"Employee",True,1935,255,1,200,900,True,0,Arial,8,-2147483633,0)
+gui.F_TicketAssignment.lblLine.create(label,"Line #",True,1935,255,1,1500,200,True,0,Arial,8,-2147483633,0)
+gui.F_TicketAssignment.txtTicketID.create(textbox,"",True,1200,300,0,200,400,False,0,Arial,8,-2147483643,1)
+gui.F_TicketAssignment.lblTicketID.create(label,"Ticket ID",True,1935,255,1,200,200,True,0,Arial,8,-2147483633,0)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+
+Variable.Global.bStart.Declare(Boolean,False)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+V.Global.bStart.Set(True)
+F.Intrinsic.Control.CallSub("CreateHash")
+Gui.F_TicketAssignment..Show
+
+Program.Sub.Main.End
+
+program.sub.f_ticketassignment_unload.start
+F.ODBC.Connection!conx.Close
+F.Intrinsic.Control.End
+
+
+program.sub.f_ticketassignment_unload.end
+
+program.sub.cmdemployee_click.start
+V.Local.sCol.Declare(String)
+V.local.sColW.Declare(String)
+V.Local.sQuery.Declare(String)
+V.Local.sRet.Declare(String)
+Gui.F_TicketAssignment..Enabled(False)
+F.Intrinsic.String.Split("Name*!*Employee ID*!*Phone*!*Department","*!*",V.Local.sCol)
+F.Intrinsic.String.Split("1750*!*1000*!*1250*!*1000","*!*",V.Local.sColW)
+V.Local.sQuery.Set("SELECT NAME, EMPLOYEE, PHONE, DEPT_EMPLOYEE FROM EMPLOYEE_MSTR order by NAME")
+Function.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.browser("Select an employee","conx",V.Local.sQuery,V.Local.sCol,V.Local.sColW,5000,5000,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,"<>","***CANCEL***")
+	Gui.F_TicketAssignment.txtEmployee.Text("")
+	Gui.F_TicketAssignment.txtEmployee.ClearMetadata
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.F_TicketAssignment.txtEmployee.SetMetaData(V.Local.sRet(0),V.Local.sRet(1))
+	Gui.F_TicketAssignment.txtEmployee.Text(V.Local.sRet(0))
+F.Intrinsic.Control.Endif
+Gui.F_TicketAssignment..Enabled(True)
+
+program.sub.cmdemployee_click.end
+
+program.sub.cmdassign_click.start
+V.Local.sQuery.Declare(String)
+V.Local.sMsg.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.F_TicketAssignment!txtLineNo.Text,=,"")
+	F.Intrinsic.UI.Msgbox("Ticket line is required")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.F_TicketAssignment!txtEmployee.Text,=,"")
+	F.Intrinsic.UI.Msgbox("Employee is required")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+Gui.F_TicketAssignment.cmdAssign.Enabled(False)
+Gui.F_TicketAssignment..Enabled(False)
+F.Intrinsic.String.Concat("Select L.TICKET_ID, L.LINE, L.ASSIGNED_EMPLOYEE, E.Name from ATG_3583_TMK_TICKET_L L LEFT JOIN EMPLOYEE_MSTR E on L.ASSIGNED_EMPLOYEE=E.EMPLOYEE where TICKET_ID=",V.Screen.F_TicketAssignment!txtTicketID.Text," AND LINE=",V.Screen.F_TicketAssignment!txtLineNo.Text,V.Local.sQuery)
+F.ODBC.Connection!conx.OpenRecordsetRW("rstAssign",V.Local.squery)
+
+F.Intrinsic.Control.If(V.ODBC.conx!rstAssign.EOF,<>,True)
+	F.Intrinsic.Control.If(V.ODBC.conx!rstAssign.FieldValTrim!Assigned_Employee,=,V.Screen.F_TicketAssignment!txtEmployee.MetaData1)
+		F.ODBC.conx!rstAssign.Close
+		Gui.F_TicketAssignment.cmdAssign.Enabled(True)
+		Gui.F_TicketAssignment..Enabled(True)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+		
+	F.Intrinsic.Control.If(V.ODBC.conx!rstAssign.FieldValTrim!Assigned_Employee,<>,"")
+		F.Intrinsic.String.concat("Ticket ID # ",V.Screen.F_TicketAssignment!txtTicketID.Text,", Line ",V.Screen.F_TicketAssignment!txtLineNo.Text," is already assigned to ",V.ODBC.conx!rstAssign.FieldValTrim!NAME,V.Local.sMsg)
+		F.Intrinsic.Control.CallSub("OpenD","sEmployee",V.ODBC.conx!rstAssign.FieldValTrim!Assigned_Employee)
+
+		F.Intrinsic.Control.If(V.Args.iOpenLine,=,1)
+			F.Intrinsic.String.Concat(V.Local.sMsg," and is currently being worked on.  Are you sure you want to reassign it?",V.Local.sMsg)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Concat(V.Local.sMsg," but is not currently being worked on.  Are you sure you want to reassign it?",V.Local.sMsg)
+		F.Intrinsic.Control.EndIf
+
+		F.Intrinsic.UI.Msgbox(V.Local.sMsg,"Line already assigned",1,V.Local.sMsg)
+		F.Intrinsic.Control.If(V.Local.sMsg,<>,1)
+			Gui.F_TicketAssignment.cmdAssign.Enabled(True)
+			Gui.F_TicketAssignment..Enabled(True)
+			F.ODBC.conx!rstAssign.Close
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.string.Concat("Update ATG_3583_TMK_TICKET_L SET ASSIGNED_EMPLOYEE='",V.Screen.F_TicketAssignment!txtEmployee.MetaData1,"' WHERE TICKET_ID=",V.Screen.F_TicketAssignment!txtTicketID.Text," AND LINE=",V.Screen.F_TicketAssignment!txtLineNo.Text,V.Local.sQuery)
+	F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+
+	F.Intrinsic.Control.CallSub("CloseTicketD")
+'	F.Intrinsic.Control.CallSub("CreateHash")
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rstAssign.Close
+Gui.F_TicketAssignment.cmdAssign.Enabled(True)
+Gui.F_TicketAssignment..Enabled(True)
+'F.Intrinsic.Control.CallSub("Clear")
+
+program.sub.cmdassign_click.end
+
+program.sub.cmdunassign_click.start
+V.Local.sRet.Declare(String)
+V.Local.sQuery.Declare(String)
+V.Local.sName.Declare(String)
+V.Local.sTicket.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.F_TicketAssignment!txtLineNo.Text,=,"")
+	F.Intrinsic.UI.Msgbox("Ticket line is required")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.F_TicketAssignment!txtEmployee.Text,=,"")
+	F.Intrinsic.UI.Msgbox("Employee is required")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+Gui.F_TicketAssignment..Enabled(False)
+Gui.F_TicketAssignment.cmdUnassign.Enabled(False)
+
+F.Intrinsic.String.Concat("Select * from ATG_3583_TMK_TICKET_L where TICKET_ID=",V.Screen.F_TicketAssignment!txtTicketID.Text," AND LINE=",V.Screen.F_TicketAssignment!txtLineNo.Text,V.Local.sQuery)
+F.ODBC.Connection!conx.OpenRecordsetRW("rstUnassign",V.Local.squery)
+
+F.Intrinsic.Control.If(V.ODBC.conx!rstUnassign.EOF,<>,True)
+	F.Intrinsic.Control.If(V.ODBC.conx!rstUnassign.FieldValTrim!Assigned_Employee,<>,V.Screen.F_TicketAssignment!txtEmployee.MetaData1)
+		F.ODBC.conx!rstUnassign.Close
+		Gui.F_TicketAssignment..Enabled(True)
+		Gui.F_TicketAssignment.cmdUnassign.Enabled(True)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.If(V.ODBC.conx!rstUnassign.FieldValTrim!Assigned_Employee,=,"")
+		F.ODBC.conx!rstUnassign.Close
+		Gui.F_TicketAssignment..Enabled(True)
+		Gui.F_TicketAssignment.cmdUnassign.Enabled(True)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.String.Trim(V.Screen.F_TicketAssignment!txtLineNo.Text,V.Local.sRet)
+	F.Intrinsic.String.Trim(V.Screen.F_TicketAssignment!txtTicketID.Text,V.Local.sTicket)
+	F.Intrinsic.String.Trim(V.Screen.F_TicketAssignment!txtEmployee.Text,V.Local.sName)
+	F.Intrinsic.String.Concat("Are you sure you want to unassign ",V.Local.sName," from Ticket ID ",V.Local.sTicket," Line # ",V.Local.sRet,"?",V.Local.sRet)
+
+	F.Intrinsic.Control.CallSub("OpenD","sEmployee",V.ODBC.conx!rstUnassign.FieldValTrim!Assigned_Employee)
+
+	F.Intrinsic.Control.If(V.Args.iOpenLine,=,1)
+		F.Intrinsic.String.Concat("This Line is assigned and is currently being worked on.  ",V.Local.sRet,V.Local.sRet)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat("This Line is assigned and but is not currently being worked on.  ",V.Local.sRet,V.Local.sRet)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.UI.Msgbox(V.Local.sRet,"Unassign Line",1,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,1)
+		F.ODBC.conx!rstUnassign.Close
+		Gui.F_TicketAssignment..Enabled(True)
+		Gui.F_TicketAssignment.cmdUnassign.Enabled(True)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+
+	F.ODBC.conx!rstUnassign.Set!ASSIGNED_EMPLOYEE("")
+	F.ODBC.conx!rstUnassign.Update
+
+	F.Intrinsic.Control.CallSub("CloseTicketD")
+'	F.Intrinsic.Control.CallSub("CreateHash")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.conx!rstUnassign.Close
+F.Intrinsic.Control.CallSub("Clear")
+Gui.F_TicketAssignment..Enabled(True)
+Gui.F_TicketAssignment.cmdUnassign.Enabled(True)
+
+
+
+program.sub.cmdunassign_click.end
+
+Program.Sub.Clear.Start
+Gui.F_TicketAssignment.txtTicketID.Text("")
+Gui.F_TicketAssignment.txtLineNo.Text("")
+Gui.F_TicketAssignment.txtEmployee.Text("")
+Gui.F_TicketAssignment.txtEmployee.ClearMetadata
+
+
+Program.Sub.Clear.End
+
+Program.Sub.Populate.Start
+V.Local.sQuery.Declare(String)
+V.Local.sID.Declare(String)
+V.Local.sName.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.F_TicketAssignment!txtLineNo.Text,<>,"")
+'	Gui.F_TicketAssignment.txtEmployee.Text("")
+'	Gui.F_TicketAssignment.txtEmployee.ClearMetadata
+
+	F.Intrinsic.String.Concat("Select * from ATG_3583_TMK_TICKET_L where TICKET_ID=",V.Screen.F_TicketAssignment!txtTicketID.Text," AND LINE=",V.Screen.F_TicketAssignment!txtLineNo.Text,V.Local.sQuery)
+	F.ODBC.Connection!conx.OpenRecordsetRO("rstEmployeeID",V.Local.sQuery)
+	F.Intrinsic.Control.If(V.ODBC.conx!rstEmployeeID.EOF,<>,True)
+		V.Local.sID.Set(V.ODBC.conx!rstEmployeeID.FieldValTrim!ASSIGNED_EMPLOYEE)
+		F.Intrinsic.String.Concat("Select * from EMPLOYEE_MSTR where EMPLOYEE='",V.local.sID,"'",V.Local.sQuery)
+		F.ODBC.Connection!conx.OpenRecordsetRO("rstEmployee",V.Local.sQuery)
+		F.Intrinsic.Control.If(V.ODBC.conx!rstEmployee.EOF,<>,True)
+			V.Local.sName.Set(V.ODBC.conx!rstEmployee.FieldValTrim!NAME)
+			Gui.F_TicketAssignment.txtEmployee.SetMetaData(V.Local.sName,V.Local.sID)
+			Gui.F_TicketAssignment.txtEmployee.Text(V.Local.sName)
+		F.Intrinsic.Control.Else
+'			V.Local.sName.Set("")
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rstEmployee.Close
+
+		
+	F.Intrinsic.Control.Else
+'		V.Local.sID.Set("")
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rstEmployeeID.Close
+F.Intrinsic.Control.EndIf
+
+
+Program.Sub.Populate.End
+
+Program.Sub.CloseTicketD.Start
+V.Local.sQuery.Declare(String)
+V.Local.sStart.Declare(String)
+V.Local.sStartTime.Declare(String)
+V.Local.dStart.Declare(Date)
+V.Local.sEnd.Declare(String)
+V.Local.sEndTime.Declare(String)
+V.Local.dEnd.Declare(String)
+V.Local.iMin.Declare(Long)
+V.Local.fHours.Declare(Float)
+
+F.Intrinsic.String.Concat("Select * from ATG_3583_TMK_TICKET_D where TICKET_ID=",V.Screen.F_TicketAssignment!txtTicketID.Text," AND TICKET_LINE=",V.Screen.F_TicketAssignment!txtLineNo.Text," AND END_DATE IS NULL ORDER BY DETAIL_ID DESC",V.Local.sQuery)
+F.ODBC.Connection!conx.OpenRecordsetRW("rstComplete",V.local.sQuery)
+F.Intrinsic.Control.DoUntil(V.ODBC.conx!rstComplete.EOF,=,True)
+	F.ODBC.conx!rstComplete.Set!END_DATE(V.Ambient.Now)
+	F.ODBC.conx!rstComplete.Set!END_TIME(V.Ambient.Now)
+	F.ODBC.conx!rstComplete.Update
+	
+	V.Local.sStart.Set(V.ODBC.conx!rstComplete.FieldValTrim!START_DATE)
+	F.Intrinsic.String.Right(V.ODBC.conx!rstComplete.FieldValTrim!START_TIME,11,V.Local.sStartTime)
+	F.Intrinsic.String.Concat(V.Local.sStart," ",V.Local.sStartTime,V.Local.sStart)
+	V.Local.dStart.Set(V.Local.sStart)
+
+	V.Local.sEnd.Set(V.ODBC.conx!rstComplete.FieldValTrim!End_DATE)
+	F.Intrinsic.String.Right(V.ODBC.conx!rstComplete.FieldValTrim!End_TIME,11,V.Local.sEndTime)
+	F.Intrinsic.String.Concat(V.Local.sEnd," ",V.Local.sEndTime,V.Local.sEnd)
+	V.Local.dEnd.Set(V.Local.sEnd)
+
+	F.Intrinsic.Date.DateDiff("n",V.Local.dStart,V.Local.dEnd,V.Local.iMin)
+	F.Intrinsic.Math.Div(V.Local.iMin,60,V.Local.fHours)
+
+	F.ODBC.conx!rstComplete.Set!HOURS(V.Local.fHours)
+	F.ODBC.conx!rstComplete.Update
+
+	F.ODBC.conx!rstComplete.MoveNext
+F.Intrinsic.Control.Loop
+
+F.ODBC.conx!rstComplete.Close
+
+Program.Sub.CloseTicketD.End
+
+Program.Sub.OpenD.Start
+V.Local.sQuery.Declare(String)
+V.Local.iOpenLine.Declare(Long,0)
+
+F.Intrinsic.String.Concat("Select * from ATG_3583_TMK_TICKET_D D, ATG_3583_TMK_TICKET_L L where D.TICKET_ID=L.TICKET_ID AND D.TICKET_LINE=L.LINE AND ASSIGNED_EMPLOYEE='",V.args.sEmployee,"' AND D.TICKET_ID=",V.Screen.F_TicketAssignment!txtTicketID.Text," AND TICKET_LINE=",V.Screen.F_TicketAssignment!txtLineNo.Text," AND END_DATE IS NULL ORDER BY DETAIL_ID DESC",V.Local.sQuery)
+F.ODBC.Connection!conx.OpenRecordsetRW("rstOpenD",V.local.sQuery)
+
+F.Intrinsic.Control.If(V.ODBC.conx!rstOpenD.EOF,=,False)
+	V.Local.iOpenLine.Set(1)
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rstOpenD.Close
+
+F.Intrinsic.Variable.AddRV("iOpenLine",V.Local.iOpenLine)
+
+Program.Sub.OpenD.End
+
+Program.Sub.CreateHash.Start
+V.Local.sQuery.Declare(String)
+V.Local.sShipHash.Declare(String)
+
+V.Local.sQuery.Set("select distinct EMPLOYEE, Name from V_EMPLOYEE_MSTR E")
+F.ODBC.Connection!conx.OpenRecordsetRO("rstHash",V.Local.sQuery)
+F.Intrinsic.Hash.Clear("htEmployee")
+F.Intrinsic.Control.DoUntil(V.ODBC.conx!rstHash.EOF,=,True)
+	F.Intrinsic.Hash.AddItem("htEmployee",V.ODBC.conx!rstHash.FieldValTrim!EMPLOYEE,V.ODBC.conx!rstHash.FieldValTrim!NAME)
+	F.ODBC.conx!rstHash.movenext
+F.Intrinsic.Control.loop
+F.ODBC.conx!rstHash.close
+
+F.Intrinsic.Control.If(V.Global.bStart,=,True)
+	V.Local.sQuery.Set("select distinct H.customer, C.NAME_CUSTOMER from ATG_3583_TMK_TICKET_H H, V_CUSTOMER_MASTER C where C.CUSTOMER=H.CUSTOMER")
+	F.ODBC.Connection!conx.OpenRecordsetRO("rstHash",V.Local.sQuery)
+
+	F.Intrinsic.Control.DoUntil(V.ODBC.conx!rstHash.EOF,=,True)
+		F.Intrinsic.Hash.AddItem("htCustomer",V.ODBC.conx!rstHash.FieldValTrim!customer,V.ODBC.conx!rstHash.FieldValTrim!NAME_CUSTOMER)
+		F.ODBC.conx!rstHash.movenext
+	F.Intrinsic.Control.loop
+	F.ODBC.conx!rstHash.close
+
+	V.Local.sQuery.Set("select * from ATG_3583_TMK_DISCIPLINES")
+	F.ODBC.Connection!conx.OpenRecordsetRO("rstHash",V.Local.sQuery)
+
+	F.Intrinsic.Control.DoUntil(V.ODBC.conx!rstHash.EOF,=,True)
+		F.Intrinsic.Hash.AddItem("htDiscipline",V.ODBC.conx!rstHash.FieldValTrim!DISCIPLINE_ID,V.ODBC.conx!rstHash.FieldValTrim!DESCRIPTION)
+		F.ODBC.conx!rstHash.movenext
+	F.Intrinsic.Control.loop
+	F.ODBC.conx!rstHash.close
+
+	V.Local.sQuery.Set("select * from ATG_3583_TMK_ACTIVITIES")
+	F.ODBC.Connection!conx.OpenRecordsetRO("rstHash",V.Local.sQuery)
+
+	F.Intrinsic.Control.DoUntil(V.ODBC.conx!rstHash.EOF,=,True)
+		F.Intrinsic.Hash.AddItem("htActivity",V.ODBC.conx!rstHash.FieldValTrim!ACTIVITIES_ID,V.ODBC.conx!rstHash.FieldValTrim!DESCRIPTION)
+		F.ODBC.conx!rstHash.movenext
+	F.Intrinsic.Control.loop
+	F.ODBC.conx!rstHash.close
+
+'	V.Local.sQuery.Set("Select H.CUSTOMER, H.SHIPTO, CONCAT(LTRIM(RTRIM(H.CUSTOMER)),LTRIM(RTRIM(H.SHIPTO)))  AS SHIP_HASH, C.NAME_CUSTOMER_SHIP, S.CUSTOMER_NAME FROM (ATG_TMK_TICKET_H H LEFT JOIN V_OE_MULTI_SHIP S ON S.CUSTOMER=H.CUSTOMER AND S.SHIP_SEQ=H.SHIPTO), V_CUSTOMER_SHIPTO C WHERE C.CUSTOMER=H.CUSTOMER")
+	V.Local.sQuery.Set("Select H.CUSTOMER, H.SHIPTO, C.NAME_CUSTOMER_SHIP, S.CUSTOMER_NAME FROM (ATG_3583_TMK_TICKET_H H LEFT JOIN V_OE_MULTI_SHIP S ON S.CUSTOMER=H.CUSTOMER AND S.SHIP_SEQ=H.SHIPTO), V_CUSTOMER_SHIPTO C WHERE C.CUSTOMER=H.CUSTOMER")
+	F.ODBC.Connection!conx.OpenRecordsetRO("rstHash",V.Local.sQuery)
+
+	F.Intrinsic.Control.DoUntil(V.ODBC.conx!rstHash.EOF,=,True)
+		F.Intrinsic.Control.If(V.ODBC.conx!rstHash.FieldValTrim!SHIPTO,=,"")
+			F.Intrinsic.String.Concat(V.ODBC.conx!rstHash.FieldValTrim!CUSTOMER,V.ODBC.conx!rstHash.FieldValTrim!SHIPTO,V.Local.sShipHash)
+			F.Intrinsic.Hash.AddItem("htShipTo",V.Local.sShipHash,V.ODBC.conx!rstHash.FieldValTrim!NAME_CUSTOMER_SHIP)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Concat(V.ODBC.conx!rstHash.FieldValTrim!CUSTOMER,V.ODBC.conx!rstHash.FieldValTrim!SHIPTO,V.Local.sShipHash)
+			F.Intrinsic.Hash.AddItem("htShipTo",V.Local.sShipHash,V.ODBC.conx!rstHash.FieldValTrim!CUSTOMER_NAME)
+		F.Intrinsic.Control.endif
+		F.ODBC.conx!rstHash.movenext
+	F.Intrinsic.Control.loop
+	F.ODBC.conx!rstHash.close
+	
+	V.Global.bStart.Set(False)
+F.Intrinsic.Control.EndIf
+
+
+
+Program.Sub.CreateHash.End
+
+Program.Sub.cmdline_click.Start
+V.Local.sCol.Declare(String)
+V.local.sColW.Declare(String)
+V.Local.sQuery.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sHash.Declare(String)
+V.Local.sFormat.Declare(String)
+Gui.F_TicketAssignment..Enabled(False)
+F.Intrinsic.String.Split("Customer Name*!*Ship-To Customer Name*!*Ticket ID*!*Line #*!*Assigned Employee*!*Discipline*!*Activity*!*Billing Unit*!*Rate*!*Date Entered","*!*",V.Local.sCol)
+F.Intrinsic.String.Split("2800*!*2800*!*750*!*750*!*1750*!*2250*!*2250*!*1500*!*750*!*1250","*!*",V.Local.sColW)
+F.Intrinsic.String.Split("*!**!**!**!**!**!**!**!*####0.00*!*","*!*",V.Local.sFormat)
+'V.Local.sQuery.Set("Select H.CUSTOMER, H.CUSTOMER, S.CUSTOMER_NAME, H.SHIPTO, L.TICKET_ID, L.LINE, L.ASSIGNED_EMPLOYEE, L.DISCIPLINE_ID, L.ACTIVITY_ID, L.BILLING_UNIT, L.CONTRACT_RATE, L.ENTERED_DATE FROM (ATG_TMK_TICKET_H H LEFT JOIN V_OE_MULTI_SHIP S ON S.CUSTOMER=H.CUSTOMER AND S.SHIP_SEQ=H.SHIPTO), ATG_TMK_TICKET_L L Where H.TICKET_ID=L.TICKET_ID ORDER BY L.ENTERED_DATE, H.CUSTOMER,S.CUSTOMER_NAME")
+V.Local.sQuery.Set("Select H.CUSTOMER, CONCAT(LTRIM(RTRIM(H.CUSTOMER)),LTRIM(RTRIM(H.SHIPTO))) AS SHIP_HASH,  L.TICKET_ID, L.LINE, L.ASSIGNED_EMPLOYEE, L.DISCIPLINE_ID, L.ACTIVITY_ID, L.BILLING_UNIT, L.CONTRACT_RATE, L.ENTERED_DATE FROM ATG_3583_TMK_TICKET_H H, ATG_3583_TMK_TICKET_L L Where H.TICKET_ID=L.TICKET_ID ORDER BY H.CUSTOMER,H.SHIPTO,L.TICKET_ID, L.ASSIGNED_EMPLOYEE, L.DISCIPLINE_ID, L.ACTIVITY_ID, L.BILLING_UNIT")
+'V.Local.sQuery.Set("Select H.CUSTOMER, CONCAT(H.CUSTOMER,H.SHIPTO) AS SHIP_HASH,  L.TICKET_ID, L.LINE, L.ASSIGNED_EMPLOYEE, L.DISCIPLINE_ID, L.ACTIVITY_ID, L.BILLING_UNIT, L.CONTRACT_RATE, L.ENTERED_DATE FROM ATG_TMK_TICKET_H H, ATG_TMK_TICKET_L L Where H.TICKET_ID=L.TICKET_ID ORDER BY H.CUSTOMER,H.SHIPTO,L.TICKET_ID, L.ASSIGNED_EMPLOYEE, L.DISCIPLINE_ID, L.ACTIVITY_ID, L.BILLING_UNIT")
+V.Local.sHash.Set("htCustomer|0|1|Customer not found*!*htShipTo|0|1|Ship-To not found*!* *!* *!*htEmployee|0|1|*!*htDiscipline|0|1|Discipline not found*!*htActivity|0|1|Activity not found")
+
+Function.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+'Function.Intrinsic.UI.SetBrowserMultiSelect(True)
+f.Intrinsic.UI.setbrowserhashlookup(V.Local.sHash)
+F.Intrinsic.UI.browser("Select a Line","conx",V.Local.sQuery,V.Local.sCol,V.Local.sColW,17850,7000,V.Local.sFormat,V.Local.sRet)
+f.Intrinsic.UI.setbrowserhashlookup("")
+
+F.Intrinsic.Control.If(V.Local.sRet,"<>","***CANCEL***")
+'	F.Intrinsic.Control.CallSub("Clear")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.F_TicketAssignment.txtTicketID.Text(V.Local.sRet(2))
+	Gui.F_TicketAssignment.txtLineNo.Text(V.Local.sRet(3))
+	F.Intrinsic.Control.CallSub("Populate")
+F.Intrinsic.Control.Endif
+
+
+Gui.F_TicketAssignment..Enabled(True)
+
+Program.Sub.cmdline_click.End
+
+
