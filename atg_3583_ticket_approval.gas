@@ -1,0 +1,2050 @@
+Program.Sub.ScreenSU.Start
+gui.F_Ticket_Approval..create
+gui.F_Ticket_Approval..caption("Ticket Approval")
+gui.F_Ticket_Approval..size(14200,5750)
+gui.F_Ticket_Approval..position(0,0)
+gui.F_Ticket_Approval..event(resize,F_Ticket_Approval_resize)
+gui.F_Ticket_Approval..event(unload,f_ticket_approval_unload)
+gui.F_Ticket_Approval..alwaysontop(False)
+gui.F_Ticket_Approval..fontname("Arial")
+gui.F_Ticket_Approval..fontsize(8)
+gui.F_Ticket_Approval..forecolor(0)
+gui.F_Ticket_Approval..fontstyle(,,,,)
+gui.F_Ticket_Approval..BackColor(-2147483633)
+gui.F_Ticket_Approval..controlbox(True)
+gui.F_Ticket_Approval..maxbutton(True)
+gui.F_Ticket_Approval..minbutton(True)
+gui.F_Ticket_Approval..mousepointer(0)
+gui.F_Ticket_Approval..moveable(True)
+gui.F_Ticket_Approval..sizeable(True)
+gui.F_Ticket_Approval..ShowInTaskBar(True)
+gui.F_Ticket_Approval..titlebar(True)
+gui.F_Ticket_Approval.gsfgLines.create(gsflexgrid)
+gui.F_Ticket_Approval.gsfgLines.FixedRows(0)
+gui.F_Ticket_Approval.gsfgLines.FixedCols(0)
+gui.F_Ticket_Approval.gsfgLines.visible(True)
+gui.F_Ticket_Approval.gsfgLines.size(13550,4000)
+gui.F_Ticket_Approval.gsfgLines.zorder(0)
+gui.F_Ticket_Approval.gsfgLines.position(200,400)
+gui.F_Ticket_Approval.gsfgLines.enabled(False)
+gui.F_Ticket_Approval.gsfgLines.event(commandclick,gsfglines_commandclick)
+gui.F_Ticket_Approval.lblCompletedLines.create(label,"Completed Lines",True,1935,255,1,200,200,True,0,Arial,8,-2147483633,0)
+gui.F_Ticket_Approval.cmdApplyChanges.create(button)
+gui.F_Ticket_Approval.cmdApplyChanges.caption("Apply Changes")
+gui.F_Ticket_Approval.cmdApplyChanges.visible(True)
+gui.F_Ticket_Approval.cmdApplyChanges.size(1300,425)
+gui.F_Ticket_Approval.cmdApplyChanges.zorder(0)
+gui.F_Ticket_Approval.cmdApplyChanges.position(200,4600)
+gui.F_Ticket_Approval.cmdApplyChanges.enabled(True)
+gui.F_Ticket_Approval.cmdApplyChanges.fontname("Arial")
+gui.F_Ticket_Approval.cmdApplyChanges.fontsize(8)
+gui.F_Ticket_Approval.cmdApplyChanges.event(click,cmdapplychanges_click)
+gui.F_Ticket_Approval.cmdAddLine.create(button)
+gui.F_Ticket_Approval.cmdAddLine.caption("Add Line")
+gui.F_Ticket_Approval.cmdAddLine.visible(True)
+gui.F_Ticket_Approval.cmdAddLine.size(1300,425)
+gui.F_Ticket_Approval.cmdAddLine.zorder(0)
+gui.F_Ticket_Approval.cmdAddLine.position(1600,4600)
+gui.F_Ticket_Approval.cmdAddLine.enabled(True)
+gui.F_Ticket_Approval.cmdAddLine.fontname("Arial")
+gui.F_Ticket_Approval.cmdAddLine.fontsize(8)
+gui.F_Ticket_Approval.cmdAddLine.event(click,cmdaddline_click)
+gui.F_Ticket_Approval.lbl2.create(label,"Customer Filter",True,1935,255,1,3100,4500,True,0,Arial,8,-2147483633,0)
+gui.F_Ticket_Approval.drpCustomer.create(dropdownlist)
+gui.F_Ticket_Approval.drpCustomer.visible(True)
+gui.F_Ticket_Approval.drpCustomer.size(2500,330)
+gui.F_Ticket_Approval.drpCustomer.zorder(0)
+gui.F_Ticket_Approval.drpCustomer.position(3100,4700)
+gui.F_Ticket_Approval.drpCustomer.enabled(True)
+gui.F_Ticket_Approval.drpCustomer.fontname("Arial")
+gui.F_Ticket_Approval.drpCustomer.fontsize(8)
+gui.F_Ticket_Approval.lbl3.create(label,"Employee Filter",True,1935,255,1,5700,4500,True,0,Arial,8,-2147483633,0)
+gui.F_Ticket_Approval.drpEmployee.create(dropdownlist)
+gui.F_Ticket_Approval.drpEmployee.visible(True)
+gui.F_Ticket_Approval.drpEmployee.size(2500,330)
+gui.F_Ticket_Approval.drpEmployee.zorder(0)
+gui.F_Ticket_Approval.drpEmployee.position(5700,4700)
+gui.F_Ticket_Approval.drpEmployee.enabled(True)
+gui.F_Ticket_Approval.drpEmployee.fontname("Arial")
+gui.F_Ticket_Approval.drpEmployee.fontsize(8)
+gui.F_Ticket_Approval.cmdFilter.create(button)
+gui.F_Ticket_Approval.cmdFilter.caption("Load")
+gui.F_Ticket_Approval.cmdFilter.visible(True)
+gui.F_Ticket_Approval.cmdFilter.size(1300,425)
+gui.F_Ticket_Approval.cmdFilter.zorder(0)
+gui.F_Ticket_Approval.cmdFilter.position(8300,4600)
+gui.F_Ticket_Approval.cmdFilter.enabled(True)
+gui.F_Ticket_Approval.cmdFilter.fontname("Arial")
+gui.F_Ticket_Approval.cmdFilter.fontsize(8)
+gui.F_Ticket_Approval.cmdFilter.event(click,cmdfilter_click)
+
+
+gui.F_Extra..create
+gui.F_Extra..caption("Detail Record Info")
+gui.F_Extra..size(3350,4350)
+gui.F_Extra..position(0,0)
+gui.F_Extra..event(unload,f_extra_unload)
+gui.F_Extra..alwaysontop(False)
+gui.F_Extra..fontname("Arial")
+gui.F_Extra..fontsize(8)
+gui.F_Extra..forecolor(0)
+gui.F_Extra..fontstyle(,,,,)
+gui.F_Extra..BackColor(-2147483633)
+gui.F_Extra..controlbox(True)
+gui.F_Extra..maxbutton(False)
+gui.F_Extra..minbutton(True)
+gui.F_Extra..mousepointer(0)
+gui.F_Extra..moveable(True)
+gui.F_Extra..sizeable(False)
+gui.F_Extra..ShowInTaskBar(True)
+gui.F_Extra..titlebar(True)
+gui.F_Extra.tabDetails.create(tab)
+gui.F_Extra.tabDetails.tabs(3)
+gui.F_Extra.tabDetails.tabsperrow(3)
+gui.F_Extra.tabDetails.settab(0)
+gui.F_Extra.tabDetails.caption("Billing Info")
+gui.F_Extra.tabDetails.settab(1)
+gui.F_Extra.tabDetails.caption("Comments")
+gui.F_Extra.tabDetails.settab(2)
+gui.F_Extra.tabDetails.caption("Notes")
+gui.F_Extra.tabDetails.size(3350,3975)
+gui.F_Extra.tabDetails.position(0,0)
+gui.F_Extra.tabDetails.visible(True)
+gui.F_Extra.tabDetails.fontname("Arial")
+gui.F_Extra.tabDetails.fontsize(8)
+gui.F_Extra.txtComments.create(textboxm)
+gui.F_Extra.txtComments.text("")
+gui.F_Extra.txtComments.visible(True)
+gui.F_Extra.txtComments.size(2905,2715)
+gui.F_Extra.txtComments.zorder(0)
+gui.F_Extra.txtComments.position(150,240)
+gui.F_Extra.txtComments.enabled(True)
+gui.F_Extra.txtComments.alignment(0)
+gui.F_Extra.txtComments.parent("tabdetails",1)
+gui.F_Extra.txtComments.fontname("Arial")
+gui.F_Extra.txtComments.fontsize(8)
+gui.F_Extra.txtComments.BackColor(-2147483643)
+gui.F_Extra.cmdSave.create(button)
+gui.F_Extra.cmdSave.caption("Save")
+gui.F_Extra.cmdSave.visible(True)
+gui.F_Extra.cmdSave.size(855,375)
+gui.F_Extra.cmdSave.zorder(0)
+gui.F_Extra.cmdSave.position(200,3400)
+gui.F_Extra.cmdSave.enabled(True)
+gui.F_Extra.cmdSave.fontname("Arial")
+gui.F_Extra.cmdSave.fontsize(8)
+gui.F_Extra.cmdSave.event(click,cmdsave_click)
+gui.F_Extra.txtNotes.create(textboxm)
+gui.F_Extra.txtNotes.text("")
+gui.F_Extra.txtNotes.visible(True)
+gui.F_Extra.txtNotes.size(2905,2715)
+gui.F_Extra.txtNotes.zorder(0)
+gui.F_Extra.txtNotes.position(150,240)
+gui.F_Extra.txtNotes.enabled(True)
+gui.F_Extra.txtNotes.borderstyle(1)
+gui.F_Extra.txtNotes.alignment(0)
+gui.F_Extra.txtNotes.parent("tabdetails",2)
+gui.F_Extra.txtNotes.fontname("Arial")
+gui.F_Extra.txtNotes.fontsize(8)
+gui.F_Extra.txtNotes.BackColor(-2147483643)
+gui.F_Extra.txtBValue.create(textbox,"0.0",True,1400,300,0,1700,2640,True,0,Arial,8,-2147483643,1)
+gui.F_Extra.txtBValue.parent("tabdetails",0)
+gui.F_Extra.txtBValue.numericonly(1)
+gui.F_Extra.txtBValue.event(gotfocus,txtbvalue_gotfocus)
+gui.F_Extra.txtBValue.event(lostfocus,txtbvalue_lostfocus)
+gui.F_Extra.lblBValue.create(label,"Bill Value",True,1935,255,1,1700,2440,True,0,Arial,8,-2147483633,0)
+gui.F_Extra.lblBValue.parent("tabdetails",0)
+gui.F_Extra.txtHours.create(textbox,"",True,1400,300,0,200,2640,True,0,Arial,8,-2147483643,1)
+gui.F_Extra.txtHours.parent("tabdetails",0)
+gui.F_Extra.txtHours.event(gotfocus,txthours_gotfocus)
+gui.F_Extra.txtHours.event(lostfocus,txthours_lostfocus)
+gui.F_Extra.lblHours.create(label,"Hours",True,1935,240,1,200,2440,True,0,Arial,8,-2147483633,0)
+gui.F_Extra.lblHours.parent("tabdetails",0)
+gui.F_Extra.txtEndTime.create(textbox,"",False,1400,300,0,1700,2040,False,0,Arial,8,-2147483643,1)
+gui.F_Extra.txtEndTime.parent("tabdetails",0)
+gui.F_Extra.txtRate.create(textbox,"",True,1400,300,0,200,2040,False,0,Arial,8,-2147483643,1)
+gui.F_Extra.txtRate.parent("tabdetails",0)
+gui.F_Extra.txtBilling.create(textbox,"",True,1400,300,0,1700,2040,False,0,Arial,8,-2147483643,1)
+gui.F_Extra.txtBilling.parent("tabdetails",0)
+gui.F_Extra.lblEndTime.create(label,"Billing",True,750,255,1,1700,1840,True,0,Arial,8,-2147483633,0)
+gui.F_Extra.lblEndTime.parent("tabdetails",0)
+gui.F_Extra.dtpEndDate.create(datepicker)
+gui.F_Extra.dtpEndDate.visible(False)
+gui.F_Extra.dtpEndDate.size(1400,300)
+gui.F_Extra.dtpEndDate.zorder(0)
+gui.F_Extra.dtpEndDate.position(200,2040)
+gui.F_Extra.dtpEndDate.enabled(False)
+gui.F_Extra.dtpEndDate.parent("tabdetails",0)
+gui.F_Extra.lblEndDate.create(label,"Rate",True,735,255,1,200,1840,True,0,Arial,8,-2147483633,0)
+gui.F_Extra.lblEndDate.parent("tabdetails",0)
+gui.F_Extra.txtStartTime.create(textbox,"",True,1400,300,0,1700,1440,True,0,Arial,8,-2147483643,1)
+gui.F_Extra.txtStartTime.parent("tabdetails",0)
+gui.F_Extra.txtStartTime.event(lostfocus,txtstarttime_lostfocus)
+gui.F_Extra.lblStartDate.create(label,"Start Date",True,1935,255,1,200,1240,True,0,Arial,8,-2147483633,0)
+gui.F_Extra.lblStartDate.parent("tabdetails",0)
+gui.F_Extra.lblStartTime.create(label,"Start Time",True,1935,255,1,1700,1240,True,0,Arial,8,-2147483633,0)
+gui.F_Extra.lblStartTime.parent("tabdetails",0)
+gui.F_Extra.dtpStartDate.create(datepicker)
+gui.F_Extra.dtpStartDate.visible(True)
+gui.F_Extra.dtpStartDate.size(1400,300)
+gui.F_Extra.dtpStartDate.zorder(0)
+gui.F_Extra.dtpStartDate.position(200,1440)
+gui.F_Extra.dtpStartDate.enabled(True)
+gui.F_Extra.dtpStartDate.parent("tabdetails",0)
+gui.F_Extra.dtpStartDate.event(lostfocus,dtpstartdate_lostfocus)
+gui.F_Extra.lbl9.create(label,"Ticket ID",True,765,255,1,200,640,True,0,Arial,8,-2147483633,0)
+gui.F_Extra.lbl9.parent("tabdetails",0)
+gui.F_Extra.lbl10.create(label,"Line #",True,630,255,1,1200,640,True,0,Arial,8,-2147483633,0)
+gui.F_Extra.lbl10.parent("tabdetails",0)
+gui.F_Extra.txtTicketID.create(textbox,"",True,900,300,0,200,840,False,0,Arial,8,-2147483643,1)
+gui.F_Extra.txtTicketID.parent("tabdetails",0)
+gui.F_Extra.txtLine.create(textbox,"",True,900,300,0,1200,840,False,0,Arial,8,-2147483643,1)
+gui.F_Extra.txtLine.parent("tabdetails",0)
+gui.F_Extra.txtLine.event(change,txtline_change)
+gui.F_Extra.txtR.create(textbox,"",False,1215,300,0,2000,3400,True,0,Arial,8,255,1)
+gui.F_Extra.lbl11.create(label,"Employee",True,1935,255,1,200,40,True,0,Arial,8,-2147483633,0)
+gui.F_Extra.lbl11.parent("tabdetails",0)
+gui.F_Extra.txtEmployee.create(textbox,"",True,2450,300,0,200,240,True,0,Arial,8,-2147483643,1)
+gui.F_Extra.txtEmployee.parent("tabdetails",0)
+gui.F_Extra.txtEmployee.event(change,txtemployee_change)
+gui.F_Extra.cmdEmployee.create(button)
+gui.F_Extra.cmdEmployee.caption("^")
+gui.F_Extra.cmdEmployee.visible(True)
+gui.F_Extra.cmdEmployee.size(350,300)
+gui.F_Extra.cmdEmployee.zorder(0)
+gui.F_Extra.cmdEmployee.position(2750,240)
+gui.F_Extra.cmdEmployee.enabled(True)
+gui.F_Extra.cmdEmployee.parent("tabdetails",0)
+gui.F_Extra.cmdEmployee.fontname("Arial")
+gui.F_Extra.cmdEmployee.fontsize(8)
+gui.F_Extra.cmdEmployee.event(click,cmdemployee_click)
+gui.F_Extra.cmdLine.create(button)
+gui.F_Extra.cmdLine.caption("^")
+gui.F_Extra.cmdLine.visible(True)
+gui.F_Extra.cmdLine.size(350,300)
+gui.F_Extra.cmdLine.zorder(0)
+gui.F_Extra.cmdLine.position(2200,840)
+gui.F_Extra.cmdLine.enabled(True)
+gui.F_Extra.cmdLine.parent("tabdetails",0)
+gui.F_Extra.cmdLine.fontname("Arial")
+gui.F_Extra.cmdLine.fontsize(8)
+gui.F_Extra.cmdLine.event(click,cmdline_click)
+gui.F_Extra.txtDetail.create(textbox,"",True,900,300,0,2200,840,False,0,Arial,8,-2147483643,1)
+gui.F_Extra.txtDetail.parent("tabdetails",0)
+gui.F_Extra.lblDetail.create(label,"Detail #",True,1935,255,1,2200,640,True,0,Arial,8,-2147483633,0)
+gui.F_Extra.lblDetail.parent("tabdetails",0)
+gui.F_Extra.cmdDelete.create(button)
+gui.F_Extra.cmdDelete.caption("Delete")
+gui.F_Extra.cmdDelete.visible(True)
+gui.F_Extra.cmdDelete.size(855,375)
+gui.F_Extra.cmdDelete.zorder(0)
+gui.F_Extra.cmdDelete.position(1200,3400)
+gui.F_Extra.cmdDelete.enabled(True)
+gui.F_Extra.cmdDelete.fontname("Arial")
+gui.F_Extra.cmdDelete.fontsize(8)
+gui.F_Extra.cmdDelete.event(click,cmddelete_click)
+gui.F_Extra.cmdEmployee.tabstop(True)
+gui.F_Extra.cmdEmployee.tabindex(1)
+gui.F_Extra.dtpStartDate.tabstop(True)
+gui.F_Extra.dtpStartDate.tabindex(2)
+gui.F_Extra.txtStartTime.tabstop(True)
+gui.F_Extra.txtStartTime.tabindex(3)
+gui.F_Extra.txtHours.tabstop(True)
+gui.F_Extra.txtHours.tabindex(4)
+gui.F_Extra.txtBValue.tabstop(True)
+gui.F_Extra.txtBValue.tabindex(5)
+gui.F_Extra.cmdSave.tabstop(True)
+gui.F_Extra.cmdSave.tabindex(6)
+gui.F_Extra.cmdDelete.tabstop(True)
+gui.F_Extra.cmdDelete.tabindex(7)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.Global.bBusy.Declare(Boolean,False)
+Variable.Global.iRow.Declare(Long,-1)
+Variable.Global.bExceed.Declare(Boolean,False)
+Variable.Global.sText.Declare(String)
+Variable.Global.iColumn.Declare(Long,-1)
+Variable.Global.sOrigText.Declare(String)
+Variable.Global.iNotBillableR.Declare(Long,-1)
+Variable.Global.bNewBusy.Declare(Boolean,False)
+Variable.Global.bLoad.Declare(Boolean,False)
+Variable.Global.bSaveLine.Declare(Boolean,False)
+
+Variable.Global.POsExceeded.Declare(String)
+Variable.Global.bPOsLoaded.Declare(Boolean,False)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+V.Local.iC.Declare(Long)
+V.Local.sRet.Declare(String)
+V.Local.sQuery.Declare(String)
+
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass,5000)
+F.Intrinsic.Control.CallSub("CreateHash")
+Gui.F_Ticket_Approval.drpCustomer.Text("All")
+Gui.F_Ticket_Approval.drpEmployee.Text("All")
+Gui.F_Ticket_Approval.gsfgLines.Rows(2)
+Gui.F_Ticket_Approval.gsfgLines.Cols(23)
+Gui.F_Ticket_Approval.gsfgLines.TextMatrix(0,0,"Employee")
+Gui.F_Ticket_Approval.gsfgLines.ColWidth(0,1600)
+Gui.F_Ticket_Approval.gsfgLines.TextMatrix(1,0,"Customer")
+Gui.F_Ticket_Approval.gsfgLines.ColWidth(1,1700)
+Gui.F_Ticket_Approval.gsfgLines.TextMatrix(2,0,"Ship-To Customer")
+Gui.F_Ticket_Approval.gsfgLines.ColWidth(2,1900)
+Gui.F_Ticket_Approval.gsfgLines.TextMatrix(3,0,"Discipline")
+Gui.F_Ticket_Approval.gsfgLines.ColWidth(3,1600)
+Gui.F_Ticket_Approval.gsfgLines.TextMatrix(4,0,"Activity")
+Gui.F_Ticket_Approval.gsfgLines.ColWidth(4,1800)
+Gui.F_Ticket_Approval.gsfgLines.TextMatrix(5,0,"Billing Unit")
+Gui.F_Ticket_Approval.gsfgLines.ColWidth(5,1000)
+Gui.F_Ticket_Approval.gsfgLines.TextMatrix(6,0,"Start Date")
+Gui.F_Ticket_Approval.gsfgLines.ColWidth(6,900)
+Gui.F_Ticket_Approval.gsfgLines.TextMatrix(7,0,"Start Time")
+Gui.F_Ticket_Approval.gsfgLines.ColWidth(7,0)
+Gui.F_Ticket_Approval.gsfgLines.TextMatrix(8,0,"End Date")
+Gui.F_Ticket_Approval.gsfgLines.ColWidth(8,0)
+Gui.F_Ticket_Approval.gsfgLines.TextMatrix(9,0,"End Time")
+Gui.F_Ticket_Approval.gsfgLines.ColWidth(9,0)
+Gui.F_Ticket_Approval.gsfgLines.TextMatrix(10,0,"Hours")
+Gui.F_Ticket_Approval.gsfgLines.ColWidth(10,550)
+Gui.F_Ticket_Approval.gsfgLines.TextMatrix(11,0,"Bill Value")
+Gui.F_Ticket_Approval.gsfgLines.ColWidth(11,750)
+Gui.F_Ticket_Approval.gsfgLines.TextMatrix(12,0,"Bill")
+Gui.F_Ticket_Approval.gsfgLines.ColWidth(12,300)
+Gui.F_Ticket_Approval.gsfgLines.TextMatrix(13,0,"Detail")
+Gui.F_Ticket_Approval.gsfgLines.ColWidth(13,0)
+Gui.F_Ticket_Approval.gsfgLines.TextMatrix(14,0,"Ticket")
+Gui.F_Ticket_Approval.gsfgLines.ColWidth(14,0)
+Gui.F_Ticket_Approval.gsfgLines.TextMatrix(15,0,"Line")
+Gui.F_Ticket_Approval.gsfgLines.ColWidth(15,0)
+Gui.F_Ticket_Approval.gsfgLines.TextMatrix(16,0,"PO")
+Gui.F_Ticket_Approval.gsfgLines.ColWidth(16,0)
+Gui.F_Ticket_Approval.gsfgLines.TextMatrix(17,0,"Rate")
+Gui.F_Ticket_Approval.gsfgLines.ColWidth(17,0)
+Gui.F_Ticket_Approval.gsfgLines.TextMatrix(18,0,"Work_Flag")
+Gui.F_Ticket_Approval.gsfgLines.ColWidth(18,0)
+Gui.F_Ticket_Approval.gsfgLines.TextMatrix(19,0,"Style")
+Gui.F_Ticket_Approval.gsfgLines.ColWidth(19,0)
+Gui.F_Ticket_Approval.gsfgLines.TextMatrix(20,0,"Approve")
+Gui.F_Ticket_Approval.gsfgLines.ColWidth(20,750)
+Gui.F_Ticket_Approval.gsfgLines.TextMatrix(21,0,"")
+Gui.F_Ticket_Approval.gsfgLines.ColWidth(21,350)
+Gui.F_Ticket_Approval.gsfgLines.TextMatrix(22,0,"Billing")
+Gui.F_Ticket_Approval.gsfgLines.ColWidth(22,0)
+
+Gui.F_Ticket_Approval.gsfgLines.FixedRows(1)
+F.Intrinsic.Control.For(V.Local.iC,0,6,1)
+	Gui.F_Ticket_Approval.gsfgLines.BuildStyle(1,V.Local.iC,"type","locked","true")
+	Gui.F_Ticket_Approval.gsfgLines.BuildStyle(1,V.Local.iC,"format","alignment","2")
+F.Intrinsic.Control.Next(V.Local.iC)
+Gui.F_Ticket_Approval.gsfgLines.BuildStyle(1,10,"type","locked","true")
+Gui.F_Ticket_Approval.gsfgLines.BuildStyle(1,10,"format","alignment","2")
+Gui.F_Ticket_Approval.gsfgLines.BuildStyle(1,11,"type","locked","true")
+Gui.F_Ticket_Approval.gsfgLines.BuildStyle(1,11,"format","alignment","2")
+Gui.F_Ticket_Approval.gsfgLines.BuildStyle(1,20,"format","alignment","4")
+Gui.F_Ticket_Approval.gsfgLines.BuildStyle(1,12,"format","alignment","4")
+Gui.F_Ticket_Approval.gsfgLines.BuildStyle(1,20,"type","CheckBox","0")
+Gui.F_Ticket_Approval.gsfgLines.BuildStyle(1,12,"type","CheckBox","0")
+Gui.F_Ticket_Approval.gsfgLines.BuildStyle(1,21,"format","alignment","4")
+Gui.F_Ticket_Approval.gsfgLines.BuildStyle(1,21,"type","Command","Edit")
+
+Gui.F_Ticket_Approval.gsfgLines.ApplyStyle(1,1)
+Gui.F_Ticket_Approval.gsfgLines.TextMatrix(10,1,"0:00")
+
+F.Intrinsic.Control.For(V.Local.iC,0,6,1)
+	Gui.F_Ticket_Approval.gsfgLines.BuildStyle(2,V.Local.iC,"type","locked","true")
+	Gui.F_Ticket_Approval.gsfgLines.BuildStyle(2,V.Local.iC,"format","alignment","2")
+	Gui.F_Ticket_Approval.gsfgLines.BuildStyle(2,V.Local.iC,"Color","Fore",-2147483640)
+F.Intrinsic.Control.Next(V.Local.iC)
+F.Intrinsic.Control.For(V.Local.iC,10,11,1)
+	Gui.F_Ticket_Approval.gsfgLines.BuildStyle(2,V.Local.iC,"type","locked","true")
+	Gui.F_Ticket_Approval.gsfgLines.BuildStyle(2,V.Local.iC,"format","alignment","2")
+	Gui.F_Ticket_Approval.gsfgLines.BuildStyle(2,V.Local.iC,"Color","Fore",-2147483640)
+F.Intrinsic.Control.Next(V.Local.iC)
+Gui.F_Ticket_Approval.gsfgLines.BuildStyle(2,21,"format","alignment","4")
+Gui.F_Ticket_Approval.gsfgLines.BuildStyle(2,21,"type","Command","Edit")
+
+F.Intrinsic.Control.For(V.Local.iC,0,6,1)
+	Gui.F_Ticket_Approval.gsfgLines.BuildStyle(3,V.Local.iC,"type","locked","true")
+	Gui.F_Ticket_Approval.gsfgLines.BuildStyle(3,V.Local.iC,"format","alignment","2")
+	Gui.F_Ticket_Approval.gsfgLines.BuildStyle(3,V.Local.iC,"Color","Fore",255)
+F.Intrinsic.Control.Next(V.Local.iC)
+F.Intrinsic.Control.For(V.Local.iC,10,11,1)
+	Gui.F_Ticket_Approval.gsfgLines.BuildStyle(3,V.Local.iC,"type","locked","true")
+	Gui.F_Ticket_Approval.gsfgLines.BuildStyle(3,V.Local.iC,"format","alignment","2")
+	Gui.F_Ticket_Approval.gsfgLines.BuildStyle(3,V.Local.iC,"Color","Fore",255)
+F.Intrinsic.Control.Next(V.Local.iC)
+Gui.F_Ticket_Approval.gsfgLines.BuildStyle(3,21,"format","alignment","4")
+Gui.F_Ticket_Approval.gsfgLines.BuildStyle(3,21,"type","Command","Edit")
+
+Gui.F_Ticket_Approval.gsfgLines.BuildStyle(4,20,"format","alignment","4")
+Gui.F_Ticket_Approval.gsfgLines.BuildStyle(4,12,"format","alignment","4")
+Gui.F_Ticket_Approval.gsfgLines.BuildStyle(4,20,"type","CheckBox","0")
+Gui.F_Ticket_Approval.gsfgLines.BuildStyle(4,12,"type","CheckBox","0")
+
+F.Intrinsic.Control.For(V.Local.iC,0,6,1)
+	Gui.F_Ticket_Approval.gsfgLines.BuildStyle(5,V.Local.iC,"type","locked","true")
+	Gui.F_Ticket_Approval.gsfgLines.BuildStyle(5,V.Local.iC,"format","alignment","2")
+	Gui.F_Ticket_Approval.gsfgLines.BuildStyle(5,V.Local.iC,"Color","Fore",16711680)
+F.Intrinsic.Control.Next(V.Local.iC)
+F.Intrinsic.Control.For(V.Local.iC,10,11,1)
+	Gui.F_Ticket_Approval.gsfgLines.BuildStyle(5,V.Local.iC,"type","locked","true")
+	Gui.F_Ticket_Approval.gsfgLines.BuildStyle(5,V.Local.iC,"format","alignment","2")
+	Gui.F_Ticket_Approval.gsfgLines.BuildStyle(5,V.Local.iC,"Color","Fore",16711680)
+F.Intrinsic.Control.Next(V.Local.iC)
+Gui.F_Ticket_Approval.gsfgLines.BuildStyle(5,21,"format","alignment","4")
+Gui.F_Ticket_Approval.gsfgLines.BuildStyle(5,21,"type","Command","Edit")
+
+Gui.F_Ticket_Approval.drpCustomer.Text("All")
+Gui.F_Ticket_Approval.drpEmployee.Text("All")
+Gui.F_Ticket_Approval..Show
+
+
+
+Program.Sub.Main.End
+
+program.sub.f_ticket_approval_unload.start
+F.ODBC.Connection!conx.Close
+F.Intrinsic.Control.End
+
+program.sub.f_ticket_approval_unload.end
+
+program.sub.f_ticket_approval_resize.start
+V.local.width.declare(Long)
+V.local.height.declare(Long)
+V.local.x.declare(Long)
+V.local.Y.declare(Long)
+V.Local.gWidth.Declare(Long)
+V.Local.iWidth.Declare(Long)
+
+Function.Intrinsic.Control.If(Variable.Screen.F_Ticket_Approval.Width,<,14200)
+	Gui.F_Ticket_Approval..Size(14200,Variable.Screen.F_Ticket_Approval.Height)
+Function.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.If(Variable.Screen.F_Ticket_Approval.height,<,5750)
+	Gui.F_Ticket_Approval..Size(Variable.Screen.F_Ticket_Approval.Width,5750)
+Function.Intrinsic.Control.EndIf
+
+F.Intrinsic.Math.Add(V.Screen.F_Ticket_Approval.Width,-625,V.Local.width)
+F.Intrinsic.Math.Add(V.Screen.F_Ticket_Approval.Height,-1750,V.Local.height)
+Gui.F_Ticket_Approval.gsfgLines.Size(V.Local.width,V.Local.height)
+F.Intrinsic.Math.Add(V.Local.height,600,V.Local.Y)
+Gui.F_Ticket_Approval.cmdApplyChanges.Position(200,V.Local.y)
+Gui.F_Ticket_Approval.cmdAddLine.Position(1600,V.Local.Y)
+Gui.F_Ticket_Approval.cmdFilter.Position(8300,V.Local.Y)
+F.Intrinsic.Math.Sub(V.Local.Y,100,V.Local.Y)
+Gui.F_Ticket_Approval.lbl2.Position(3100,V.Local.Y)
+Gui.F_Ticket_Approval.lbl3.Position(5700,V.Local.Y)
+F.Intrinsic.Math.Add(V.Local.Y,200,V.Local.Y)
+Gui.F_Ticket_Approval.drpCustomer.Position(3100,V.Local.Y)
+Gui.F_Ticket_Approval.drpEmployee.Position(5700,V.Local.Y)
+
+F.Intrinsic.Control.If(V.Screen.F_Ticket_Approval!gsfgLines.Width,>,13600)
+	F.Intrinsic.Math.Add(V.Screen.F_Ticket_Approval!gsfgLines.Width,-1750,V.Local.gWidth)
+	F.Intrinsic.Math.Mult(V.Local.gWidth,0.1355932,V.Local.iWidth)
+	Gui.F_Ticket_Approval.gsfgLines.ColWidth(0,V.Local.iWidth)
+	Gui.F_Ticket_Approval.gsfgLines.ColWidth(3,V.Local.iWidth)
+	F.Intrinsic.Math.Mult(V.Local.gWidth,0.1440678,V.Local.iWidth)
+	Gui.F_Ticket_Approval.gsfgLines.ColWidth(1,V.Local.iWidth)
+	F.Intrinsic.Math.Mult(V.Local.gWidth,0.1610169,V.Local.iWidth)
+	Gui.F_Ticket_Approval.gsfgLines.ColWidth(2,V.Local.iWidth)
+	F.Intrinsic.Math.Mult(V.Local.gWidth,0.1525424,V.Local.iWidth)
+	Gui.F_Ticket_Approval.gsfgLines.ColWidth(4,V.Local.iWidth)
+	F.Intrinsic.Math.Mult(V.Local.gWidth,0.0847458,V.Local.iWidth)
+	Gui.F_Ticket_Approval.gsfgLines.ColWidth(5,V.Local.iWidth)
+	F.Intrinsic.Math.Mult(V.Local.gWidth,0.0762712,V.Local.iWidth)
+	Gui.F_Ticket_Approval.gsfgLines.ColWidth(6,V.Local.iWidth)
+	F.Intrinsic.Math.Mult(V.Local.gWidth,0.0466102,V.Local.iWidth)
+	Gui.F_Ticket_Approval.gsfgLines.ColWidth(10,V.Local.iWidth)
+	F.Intrinsic.Math.Mult(V.Local.gWidth,0.0635593,V.Local.iWidth)
+	Gui.F_Ticket_Approval.gsfgLines.ColWidth(11,V.Local.iWidth)
+F.Intrinsic.Control.Else
+	Gui.F_Ticket_Approval.gsfgLines.ColWidth(0,1600)
+	Gui.F_Ticket_Approval.gsfgLines.ColWidth(1,1700)
+	Gui.F_Ticket_Approval.gsfgLines.ColWidth(2,1900)
+	Gui.F_Ticket_Approval.gsfgLines.ColWidth(3,1600)
+	Gui.F_Ticket_Approval.gsfgLines.ColWidth(4,1800)
+	Gui.F_Ticket_Approval.gsfgLines.ColWidth(5,1000)
+	Gui.F_Ticket_Approval.gsfgLines.ColWidth(6,900)
+	Gui.F_Ticket_Approval.gsfgLines.ColWidth(10,550)
+	Gui.F_Ticket_Approval.gsfgLines.ColWidth(11,750)
+F.Intrinsic.Control.EndIf
+'
+'
+
+program.sub.f_ticket_approval_resize.end
+
+program.sub.cmdapplychanges_click.start
+V.Local.sRet.Declare(String)
+Gui.F_Ticket_Approval.gsfgLines.GetTextMatrix(0,1,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,=,"")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Global.bLoad,=,True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+V.Global.bLoad.Set(True)
+Gui.F_Ticket_Approval..Visible("False")
+F.Intrinsic.UI.InvokeWaitDialog("Saving...","Updating Detail Records")
+Gui.F_Ticket_Approval.cmdApplyChanges.Enabled("False")
+Gui.F_Ticket_Approval.gsfgLines.Enabled("False")
+F.Intrinsic.Control.CallSub("ApplyChanges")
+'F.Intrinsic.Control.CallSub("PopulateDropDowns")
+F.Intrinsic.Control.CallSub("LoadGrid")
+
+Gui.F_Ticket_Approval.cmdApplyChanges.Enabled("True")
+Gui.F_Ticket_Approval.gsfgLines.Enabled("True")
+V.Global.bLoad.Set(False)
+F.Intrinsic.UI.CloseWaitDialog
+Gui.F_Ticket_Approval..Visible("True")
+
+program.sub.cmdapplychanges_click.end
+
+Program.Sub.LoadGrid.Start
+Gui.F_Ticket_Approval.cmdApplyChanges.Enabled("False")
+Gui.F_Ticket_Approval.cmdAddLine.Enabled(False)
+Gui.F_Ticket_Approval.gsfgLines.Enabled("False")
+Gui.F_Ticket_Approval.cmdFilter.Enabled("False")
+V.Local.sQuery.Declare(String)
+V.Local.sQuery1.Declare(String)
+V.Local.sQuery2.Declare(String)
+V.Local.iRecords.Declare(Long)
+V.Local.fPercent.Declare(Float)
+V.Local.fTotal.Declare(Float,0)
+V.Local.iR.Declare(Long,0)
+V.Local.iRows.Declare(Long,1)
+V.Local.sTime.Declare(String)
+V.Local.dTime.Declare(Date)
+V.Local.bTest.Declare(Boolean)
+V.Local.iCustomer.Declare(Long,0)
+V.Local.iEmployee.Declare(Long,0)
+V.Local.i.declare(Long,0)
+V.Local.sCustomerID.Declare(String)
+V.Local.sEmployeeID.Declare(String)
+V.Local.iC.Declare(Long)
+V.Local.sPOs.Declare(String)
+V.Local.sPOs.Redim(-1,-1)
+V.Local.iUB.Declare(Long,-1)
+V.Local.iExceeded.declare(Long)
+V.Local.iC2.Declare(Long)
+V.Local.fBilling.Declare(Float)
+V.Local.sPOsExceeded.Declare(String)
+V.Local.sPOTemp.Declare(String)
+
+F.Intrinsic.Control.CallSub("Clear")
+Gui.F_Ticket_Approval.drpCustomer.SetMetaData(V.Screen.F_Ticket_Approval!drpCustomer.Text,V.Screen.F_Ticket_Approval!drpCustomer.Text)
+Gui.F_Ticket_Approval.drpEmployee.SetMetaData(V.Screen.F_Ticket_Approval!drpEmployee.Text,V.Screen.F_Ticket_Approval!drpEmployee.Text)
+
+F.ODBC.Connection!conx.OpenRecordsetRO("rstPOEmpty","SELECT * FROM ATG_3583_TMK_PO WHERE TOTAL_DOLLARS>0")
+F.Intrinsic.Control.DoUntil(V.ODBC.conx!rstPOEmpty.EOF,=,True)
+	F.Intrinsic.Math.Add(V.Local.iUB,1,V.Local.iUB)
+	F.Intrinsic.Control.If(V.Local.iUB,=,0)
+		V.Local.sPOs.Redim(0,0)
+	F.Intrinsic.Control.Else
+		V.Local.sPOs.RedimPreserve(0,V.Local.iUB)
+	F.Intrinsic.Control.EndIf
+	V.Local.sPOs(v.Local.iUB).Set(V.ODBC.conx!rstPOEmpty.FieldValTrim!PO_ID)
+	F.ODBC.conx!rstPOEmpty.movenext
+F.Intrinsic.Control.Loop
+F.ODBC.conx!rstPOEmpty.Close
+
+F.Intrinsic.Control.If(V.Global.bPOsLoaded,<>,True)
+	F.Intrinsic.UI.ChangeWaitStatus("Checking POs...")
+	F.Intrinsic.Control.CallSub("LoadExceed")
+F.Intrinsic.Control.Else
+	V.Global.bPOsLoaded.Set(False)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Split(V.global.POsExceeded,"!*!",V.Local.sPOsExceeded)
+
+V.Local.sQuery2.Set("Select Count(*) as Records")
+
+V.Local.sQuery1.Set("Select D.B_VALUE, D.EMPLOYEE, H.SHIPTO,CONCAT(LTRIM(RTRIM(H.CUSTOMER)),LTRIM(RTRIM(H.SHIPTO)))  AS SHIP_HASH, L.DISCIPLINE_ID, L.ACTIVITY_ID, D.DETAIL_ID, D.TICKET_ID, D.TICKET_LINE, H.CUSTOMER, L.BILLING_UNIT, D.START_DATE, D.START_TIME, D.END_DATE, D.END_TIME, D.HOURS, D.APPROVAL_FLAG, D.BILLING_FLAG, H.PO_ID, L.CONTRACT_RATE, D.WORK_COMPLETE_FLAG")
+V.Local.sQuery.Set(" from ATG_3583_TMK_TICKET_D D, ATG_3583_TMK_TICKET_L L, ATG_3583_TMK_TICKET_H H WHERE D.TICKET_ID=H.TICKET_ID AND L.TICKET_ID=D.TICKET_ID AND L.LINE=D.TICKET_LINE AND D.END_DATE IS NOT NULL AND D.DETAIL_ID NOT IN (Select DETAIL_ID from ATG_TMK_TICKET_D WHERE APPROVAL_FLAG=1 AND BILLING_FLAG=1 AND INVOICE_NO IS NOT NULL)")
+
+F.Intrinsic.Control.If(V.Screen.F_Ticket_Approval!drpCustomer.Text,<>,"")
+F.Intrinsic.Control.AndIf(V.Screen.F_Ticket_Approval!drpCustomer.Text,<>,"All")
+	F.Intrinsic.Hash.LookupByValue("htCustomer",V.Screen.F_Ticket_Approval!drpCustomer.Text,True,V.Local.sCustomerID)
+	F.Intrinsic.String.Concat(V.Local.sQuery," AND H.CUSTOMER='",V.Local.sCustomerID,"'",V.Local.sQuery)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.F_Ticket_Approval!drpEmployee.Text,<>,"")
+F.Intrinsic.Control.AndIf(V.Screen.F_Ticket_Approval!drpEmployee.Text,<>,"All")
+	F.Intrinsic.Hash.LookupByValue("htEmployee",V.Screen.F_Ticket_Approval!drpEmployee.Text,True,V.Local.sEmployeeID)
+	F.Intrinsic.String.Concat(V.Local.sQuery," AND D.EMPLOYEE='",V.Local.sEmployeeID,"'",V.Local.sQuery)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Concat(V.local.sQuery2,V.Local.sQuery,V.Local.sQuery2)
+F.Intrinsic.Debug.Stop
+F.ODBC.Connection!conx.OpenRecordsetRO("rstCount",V.Local.sQuery2)
+F.Intrinsic.control.If(V.ODBC.conx!rstCount.EOF,<>,True)
+	F.Intrinsic.Control.If(V.ODBC.conx!rstCount.FieldValTrim!Records,<>,0)
+		F.Intrinsic.Math.Div(100,V.ODBC.conx!rstCount.FieldValTrim!Records,V.Local.fPercent)
+	F.Intrinsic.Control.Else
+		V.Local.fPercent.Set(100)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	V.Local.fPercent.Set(100)
+F.Intrinsic.Control.Endif
+F.ODBC.conx!rstCount.Close
+
+F.Intrinsic.String.Concat(V.local.sQuery1,V.Local.sQuery," ORDER BY H.CUSTOMER, H.SHIPTO, L.ASSIGNED_EMPLOYEE, L.DISCIPLINE_ID, L.ACTIVITY_ID,L.BILLING_UNIT,D.START_DATE, D.START_TIME",V.Local.sQuery)
+
+F.ODBC.Connection!conx.OpenRecordsetRO("rstLoad",V.Local.sQuery)
+F.Intrinsic.Control.DoUntil(V.ODBC.conx!rstLoad.EOF,=,True)
+'F.Intrinsic.Control.DoUntil(V.local.i,=,2)
+	F.Intrinsic.Math.Add(V.Local.i,1,V.Local.i)
+	V.Local.iR.Set(V.Local.iRows)
+	F.Intrinsic.Math.Add(V.Local.iRows,1,V.Local.iRows)
+	Gui.F_Ticket_Approval.gsfgLines.Rows(V.Local.iRows)
+	
+	F.Intrinsic.Control.CallSub("FindHash","sCustomerID",V.ODBC.conx!rstLoad.FieldValTrim!CUSTOMER,"sShipHashID",V.ODBC.conx!rstLoad.FieldValTrim!SHIP_HASH,"sEmployeeID",V.ODBC.conx!rstLoad.FieldValTrim!EMPLOYEE,"sActivityID",V.ODBC.conx!rstLoad.FieldValTrim!ACTIVITY_ID,"sDisciplineID",V.ODBC.conx!rstLoad.FieldValTrim!DISCIPLINE_ID)
+
+	Gui.F_Ticket_Approval.gsfgLines.ApplyStyle(V.Local.iR,4)
+	Gui.F_Ticket_Approval.gsfgLines.TextMatrix(0,V.Local.iR,V.Args.sEmployee)
+	Gui.F_Ticket_Approval.gsfgLines.TextMatrix(1,V.Local.iR,V.args.sCustomer)
+	Gui.F_Ticket_Approval.gsfgLines.TextMatrix(2,V.Local.iR,V.args.sShipTo)
+	Gui.F_Ticket_Approval.gsfgLines.TextMatrix(3,V.Local.iR,V.args.sDiscipline)
+	Gui.F_Ticket_Approval.gsfgLines.TextMatrix(4,V.Local.iR,V.args.sActivity)
+	Gui.F_Ticket_Approval.gsfgLines.TextMatrix(5,V.Local.iR,V.ODBC.conx!rstLoad.FieldValTrim!BILLING_UNIT)
+	F.Intrinsic.String.Format(V.ODBC.conx!rstLoad.FieldValTrim!START_DATE,"MM/DD/YYYY",V.Local.sTime)
+	Gui.F_Ticket_Approval.gsfgLines.TextMatrix(6,V.Local.iR,V.Local.sTime)
+	F.Intrinsic.Control.CallSub("HoursTime","fHours",V.ODBC.conx!rstLoad.FieldValTrim!HOURS)
+	Gui.F_Ticket_Approval.gsfgLines.TextMatrix(10,V.local.iR,V.args.sHours)
+	F.Intrinsic.Control.If(V.ODBC.conx!rstLoad.FieldValTrim!BILLING_UNIT,<>,"Hours")
+		F.Intrinsic.String.Format(V.ODBC.conx!rstLoad.FieldValTrim!B_VALUE,"####0.00",V.Local.sTime)
+		Gui.F_Ticket_Approval.gsfgLines.TextMatrix(11,V.Local.iR,V.Local.sTime)
+		F.Intrinsic.Control.If(V.ODBC.conx!rstLoad.FieldValTrim!B_VALUE,=,"")
+			Gui.F_Ticket_Approval.gsfgLines.TextMatrix(11,V.Local.iR,"0.00")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Format(V.ODBC.conx!rstLoad.FieldValTrim!HOURS,"####0.00",V.Local.sTime)
+		Gui.F_Ticket_Approval.gsfgLines.TextMatrix(11,V.Local.iR,V.Local.sTime)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.If(V.ODBC.conx!rstLoad.FieldValTrim!BILLING_FLAG,=,True)
+		Gui.F_Ticket_Approval.gsfgLines.TextMatrix(12,V.Local.iR,1)
+	F.Intrinsic.Control.Else
+		Gui.F_Ticket_Approval.gsfgLines.TextMatrix(12,V.Local.iR,0)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.If(V.ODBC.conx!rstLoad.FieldValTrim!APPROVAL_FLAG,=,True)
+		Gui.F_Ticket_Approval.gsfgLines.TextMatrix(20,V.Local.iR,1)
+	F.Intrinsic.Control.Else
+		Gui.F_Ticket_Approval.gsfgLines.TextMatrix(20,V.Local.iR,0)
+	F.Intrinsic.Control.EndIf
+	Gui.F_Ticket_Approval.gsfgLines.TextMatrix(13,V.Local.iR,V.ODBC.conx!rstLoad.FieldValTrim!DETAIL_ID)
+	Gui.F_Ticket_Approval.gsfgLines.TextMatrix(14,V.Local.iR,V.ODBC.conx!rstLoad.FieldValTrim!TICKET_ID)
+	V.Local.iExceeded.Set(0)
+	F.Intrinsic.Control.For(V.Local.iC,0,V.Local.sPOs.UBound,1)
+		F.Intrinsic.Control.If(V.ODBC.conx!rstLoad.FieldValTrim!PO_ID,=,V.Local.sPOs(v.Local.iC))
+			Gui.F_Ticket_Approval.gsfgLines.TextMatrix(16,V.Local.iR,V.ODBC.conx!rstLoad.FieldValTrim!PO_ID)
+
+			F.Intrinsic.Control.For(V.Local.iC2,0,V.Local.sPOsExceeded.UBound,1)
+				F.Intrinsic.String.Split(V.Local.sPOsExceeded(v.Local.iC2),"*!*",V.Local.sPOTemp)
+				F.Intrinsic.Control.If(V.ODBC.conx!rstLoad.FieldValTrim!PO_ID,=,V.Local.sPOTemp(0))
+					V.Local.iExceeded.Set(1)
+					F.Intrinsic.Control.ExitFor(V.Local.iC2)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Next(V.Local.iC2)
+			
+			F.Intrinsic.Control.ExitFor(V.Local.iC)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iC)
+
+	F.Intrinsic.Control.If(V.local.iExceeded,=,1)
+		Gui.F_Ticket_Approval.gsfgLines.ApplyStyle(V.Local.iR,3)
+	F.Intrinsic.Control.ElseIF(V.ODBC.conx!rstLoad.FieldValTrim!WORK_COMPLETE_FLAG,=,True)
+		Gui.F_Ticket_Approval.gsfgLines.ApplyStyle(V.Local.iR,5)
+	F.Intrinsic.Control.Else
+		Gui.F_Ticket_Approval.gsfgLines.ApplyStyle(V.Local.iR,2)
+	F.Intrinsic.Control.EndIf
+
+	F.ODBC.conx!rstLoad.MoveNext
+	F.Intrinsic.Math.Add(V.Local.fPercent,V.Local.fTotal,V.Local.fTotal)
+	F.Intrinsic.UI.ChangeWaitStatus("Loading...",V.Local.fTotal)
+F.Intrinsic.Control.Loop
+F.ODBC.conx!rstLoad.Close
+
+Gui.F_Ticket_Approval.cmdApplyChanges.Enabled("True")
+Gui.F_Ticket_Approval.gsfgLines.Enabled("True")
+Gui.F_Ticket_Approval.cmdAddLine.Enabled(True)
+Gui.F_Ticket_Approval.cmdFilter.Enabled("True")
+
+
+Program.Sub.LoadGrid.End
+
+Program.Sub.Clear.Start
+Gui.F_Ticket_Approval.gsfgLines.Rows(1)
+Gui.F_Ticket_Approval.gsfgLines.Rows(2)
+Gui.F_Ticket_Approval.gsfgLines.FixedRows(1)
+Gui.F_Ticket_Approval.gsfgLines.ApplyStyle(1,1)
+
+Program.Sub.Clear.End
+
+Program.Sub.LoadExceed.Start
+'Calculates the Total Applied for ALL EXCEEDED POs and concatenates them in a global string
+V.Local.sQuery.Declare(String)
+V.Local.iExceeded.Declare(Long,0)
+V.Local.iTotalApplied.Declare(Float,0)
+V.Local.iRecordApplied.Declare(Float,0)
+V.Local.sPOs.Declare(String)
+V.Local.sPOCurr.Declare(String)
+V.Local.sPOString.Declare(String)
+V.Local.sPOs.Redim(-1,-1)
+V.Local.iUB.Declare(Long,-1)
+V.Local.iTotalDollars.Declare(Float,0)
+V.Local.sCustomer.Declare(String)
+V.Local.sEmployee.Declare(String)
+V.Local.iCounter.Declare(Long)
+V.Local.bExceeded.Declare(Boolean)
+V.Local.sTempPO.Declare(String)
+V.Local.sQuery2.Declare(String)
+
+V.Local.sQuery.Set("SELECT H.PO_ID,P.TOTAL_DOLLARS,P.TOTAL_APPLIED,D.Hours,D.B_VALUE,L.BILLING_UNIT, L.Contract_RATE FROM ATG_3583_TMK_TICKET_D D,ATG_3583_TMK_TICKET_L L, ATG_3583_TMK_TICKET_H H, ATG_3583_TMK_PO P WHERE H.PO_ID=P.PO_ID AND P.TOTAL_DOLLARS>0 AND L.TICKET_ID=D.TICKET_ID AND L.Line=D.TICKET_LINE AND H.TICKET_ID=D.TICKET_ID AND D.BILLING_FLAG=1 AND APPROVAL_FLAG=1 AND D.END_DATE IS NOT NULL")
+V.Local.sQuery2.Set("SELECT * FROM ATG_TMK_PO WHERE TOTAL_APPLIED>TOTAL_DOLLARS AND TOTAL_DOLLARS>0")
+
+F.Intrinsic.Control.If(V.Screen.F_Ticket_Approval!drpCustomer.MetaData0,<>,"All")
+F.Intrinsic.Control.AndIf(V.Screen.F_Ticket_Approval!drpCustomer.MetaData0,<>,"")
+	F.Intrinsic.Hash.LookupByValue("htCustomer",V.Screen.F_Ticket_Approval!drpCustomer.MetaData0,True,V.Local.sCustomer)
+	F.Intrinsic.String.Concat(V.Local.sQuery," AND P.CUSTOMER='",V.Local.sCustomer,"'",V.Local.sQuery)
+	F.Intrinsic.String.Concat(V.Local.sQuery2," AND CUSTOMER='",V.Local.sCustomer,"'",V.Local.sQuery2)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Concat(V.Local.sQuery," AND D.DETAIL_ID NOT IN (Select DETAIL_ID from ATG_TMK_TICKET_D WHERE APPROVAL_FLAG=1 AND BILLING_FLAG=1 AND INVOICE_NO IS NOT NULL) ORDER BY H.PO_ID DESC",V.Local.sQuery)
+
+'Calculates all the exceeded POs based on approved lines (i.e., it's about to go to invoicing, but PO amount has not been updated)
+F.ODBC.Connection!conx.OpenRecordsetRO("rstExceed",V.Local.sQuery)
+F.Intrinsic.Control.If(V.ODBC.conx!rstExceed.EOF,<>,True)
+	F.Intrinsic.Control.DoUntil(V.ODBC.conx!rstExceed.EOF,=,True)
+		V.Local.sPOCurr.Set(V.ODBC.conx!rstExceed.FieldValTrim!PO_ID)
+		V.Local.iTotalDollars.Set(V.ODBC.conx!rstExceed.FieldValTrim!TOTAL_DOLLARS)
+		V.Local.iTotalApplied.Set(V.ODBC.conx!rstExceed.FieldValTrim!TOTAL_APPLIED)
+
+		F.Intrinsic.Control.DoUntil(V.ODBC.conx!rstExceed.FieldValTrim!PO_ID,<>,V.Local.sPOCurr)
+			F.Intrinsic.Control.If(V.ODBC.conx!rstExceed.FieldValTrim!BILLING_UNIT,<>,"Hours")
+				F.Intrinsic.Math.Mult(V.ODBC.conx!rstExceed.FieldValTrim!B_VALUE,V.ODBC.conx!rstExceed.FieldValTrim!CONTRACT_RATE,V.Local.iRecordApplied)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.Math.Mult(V.ODBC.conx!rstExceed.FieldValTrim!HOURS,V.ODBC.conx!rstExceed.FieldValTrim!CONTRACT_RATE,V.Local.iRecordApplied)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Math.Add(V.Local.iTotalApplied,V.Local.iRecordApplied,V.Local.iTotalApplied)
+			F.Intrinsic.Debug.Stop
+			F.ODBC.conx!rstExceed.MoveNext
+			F.Intrinsic.Control.If(V.ODBC.conx!rstExceed.EOF,=,True)
+				F.Intrinsic.Control.ExitDo
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Loop
+
+		F.Intrinsic.Control.If(V.Local.iTotalApplied,>,V.Local.iTotalDollars)
+			F.Intrinsic.math.Add(V.Local.iUB,1,V.Local.iUB)
+			F.Intrinsic.Control.If(V.Local.iUB,=,0)
+				V.Local.sPOs.Redim(0,0)
+			F.Intrinsic.Control.Else
+				V.Local.sPOs.RedimPreserve(0,V.Local.iUB)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Math.Sub(V.Local.iTotalApplied,V.Local.iTotalDollars,V.Local.iTotalApplied)
+			F.Intrinsic.String.Concat(V.Local.sPOCurr,"*!*",V.Local.iTotalApplied,V.Local.sPOCurr)
+			V.Local.sPOs(v.Local.iUB).Set(V.Local.sPOCurr)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Loop
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rstExceed.Close
+
+'Adds all exceeded POs that weren't added above
+F.ODBC.Connection!conx.OpenRecordsetRO("rstPOs",V.Local.sQuery2)
+F.Intrinsic.Control.DoUntil(V.ODBC.conx!rstPOs.EOF,=,True)
+	V.Local.bExceeded.Set(False)
+	V.Local.sPOCurr.Set(V.ODBC.conx!rstPOs.FieldValTrim!PO_ID)
+	V.Local.iTotalDollars.Set(V.ODBC.conx!rstPOs.FieldValTrim!TOTAL_DOLLARS)
+	V.Local.iTotalApplied.Set(V.ODBC.conx!rstPOs.FieldValTrim!TOTAL_APPLIED)
+
+	F.Intrinsic.Control.For(V.Local.iCounter,0,V.Local.sPOs.UBound,1)
+		F.Intrinsic.String.Split(V.Local.sPOs(v.Local.iCounter),"*!*",V.Local.sTempPO)
+		F.Intrinsic.Control.If(V.Local.sTempPO(0),=,V.Local.sPOCurr)
+			V.Local.bExceeded.Set(True)
+			F.Intrinsic.Control.ExitFor(V.Local.iCounter)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iCounter)
+
+	F.Intrinsic.Control.If(V.Local.bExceeded,=,False)
+		F.Intrinsic.math.Add(V.Local.iUB,1,V.Local.iUB)
+		F.Intrinsic.Control.If(V.Local.iUB,=,0)
+			V.Local.sPOs.Redim(0,0)
+		F.Intrinsic.Control.Else
+			V.Local.sPOs.RedimPreserve(0,V.Local.iUB)
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.Math.Sub(V.Local.iTotalApplied,V.Local.iTotalDollars,V.Local.iTotalApplied)
+		F.Intrinsic.String.Concat(V.Local.sPOCurr,"*!*",V.Local.iTotalApplied,V.Local.sPOCurr)
+		V.Local.sPOs(v.Local.iUB).Set(V.Local.sPOCurr)
+	F.Intrinsic.Control.EndIf
+
+	F.ODBC.conx!rstPOs.MoveNext
+F.Intrinsic.Control.Loop
+F.ODBC.conx!rstPOs.Close
+
+F.Intrinsic.Control.If(V.Local.sPOs.UBound,>,-1)
+	F.Intrinsic.String.Join(V.Local.sPOs,"!*!",V.Local.sPOs)
+F.Intrinsic.Control.Else
+	V.Local.sPOs.Redim(0,0)
+	V.Local.sPOs.Set("")
+F.Intrinsic.Control.EndIf
+V.Global.POsExceeded.Set("")
+V.Global.POsExceeded.Set(V.Local.sPOs)
+F.Intrinsic.Variable.AddRV("POsExceeded",V.Local.sPOs)
+
+
+Program.Sub.LoadExceed.End
+
+Program.Sub.HoursDec.Start
+V.Local.sHours.Declare(String)
+V.Local.fHours.Declare(Float)
+V.Local.fMin.Declare(Float)
+
+F.Intrinsic.String.Split(V.Args.sHours,":",V.Local.sHours)
+F.Intrinsic.Control.If(V.Local.sHours.UBound,>,0)
+	V.Local.fHours.Set(V.Local.sHours(0))
+	V.Local.fMin.Set(V.Local.sHours(1))
+	F.Intrinsic.Math.Div(V.Local.fMin,60,V.Local.fMin)
+	F.Intrinsic.Math.Add(V.Local.fHours,V.Local.fMin,V.Local.fHours)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Format(V.Local.fHours,"####0.00",V.Local.sHours)
+F.Intrinsic.Variable.AddRV("fHours",V.Local.sHours)
+
+
+Program.Sub.HoursDec.End
+
+program.sub.cmdaddline_click.start
+F.Intrinsic.Control.If(V.Global.bLoad,=,True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+Gui.F_Ticket_Approval..Enabled(False)
+V.Local.sRet.Declare(String)
+V.Local.sTemp.Declare(String)
+
+Gui.F_Ticket_Approval.gsfgLines.GetTextMatrix(0,1,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+	F.Intrinsic.UI.Msgbox("Would you like to apply changes?  If no, all changes will be lost.","Add New Line",3,V.Local.sRet)
+	F.Intrinsic.Control.SelectCase(V.Local.sRet)
+		F.Intrinsic.Control.Case(6)
+			Gui.F_Ticket_Approval..Visible("False")
+			F.Intrinsic.UI.InvokeWaitDialog("Saving...","Updating Detail Records")
+			F.Intrinsic.Control.CallSub("ApplyChanges")
+			F.Intrinsic.UI.CloseWaitDialog
+			Gui.F_Ticket_Approval..Visible("True")
+		F.Intrinsic.Control.Case(2)
+			Gui.F_Ticket_Approval..Enabled(True)
+			F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndSelect
+F.Intrinsic.Control.EndIf
+
+V.Global.bLoad.Set(True)
+F.Intrinsic.Control.CallSub("ClearNewLine")
+Gui.F_Extra.tabDetails.SetTab(0)
+Gui.F_Ticket_Approval.cmdApplyChanges.Enabled("False")
+Gui.F_Ticket_Approval.cmdAddLine.Enabled(False)
+Gui.F_Ticket_Approval.gsfgLines.Enabled("False")
+Gui.F_Ticket_Approval.cmdFilter.Enabled("False")
+Gui.F_Extra.cmdSave.Caption("Add Line")
+Gui.F_Extra..Caption("New Line")
+Gui.F_Extra.cmdEmployee.Visible(True)
+Gui.F_Extra.txtR.Text("")
+Gui.F_Extra.cmdLine.Visible(True)
+'Gui.F_Extra..Size(8675,2475)
+Gui.F_Extra.lblBValue.Visible(True)
+Gui.F_Extra.txtBValue.Visible(True)
+Gui.F_Extra.lblDetail.Visible(False)
+Gui.F_Extra.txtDetail.Visible(False)
+Gui.F_Extra.txtDetail.Text(-1)
+Gui.F_Extra..Show
+
+
+
+program.sub.cmdaddline_click.end
+
+program.sub.F_Extra_unload.start
+Gui.F_Extra..visible(False)
+V.Global.bLoad.Set(False)
+F.Intrinsic.Control.If(V.Screen.F_Extra.Caption,=,"New Line")
+	Gui.F_Ticket_Approval..Visible("False")
+	F.Intrinsic.UI.InvokeWaitDialog("Loading...","Updating Detail Records")
+	F.Intrinsic.Control.CallSub("LoadGrid")
+	F.Intrinsic.UI.CloseWaitDialog
+	Gui.F_Ticket_Approval..Visible("True")
+F.Intrinsic.Control.Else
+	Gui.F_Ticket_Approval.cmdApplyChanges.Enabled("True")
+	Gui.F_Ticket_Approval.gsfgLines.Enabled("True")
+	Gui.F_Ticket_Approval.cmdAddLine.Enabled(True)
+	Gui.F_Ticket_Approval.cmdFilter.Enabled("True")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.CallSub("ClearNewLine")
+Gui.F_Ticket_Approval..Enabled(True)
+
+program.sub.F_Extra_unload.end
+
+program.sub.cmdemployee_click.start
+V.Local.sCol.Declare(String)
+V.local.sColW.Declare(String)
+V.Local.sQuery.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.String.Split("Name*!*Employee ID*!*Phone*!*Department","*!*",V.Local.sCol)
+F.Intrinsic.String.Split("1750*!*1000*!*1250*!*1000","*!*",V.Local.sColW)
+V.Local.sQuery.Set("SELECT NAME, EMPLOYEE, PHONE, DEPT_EMPLOYEE FROM EMPLOYEE_MSTR order by NAME")
+'F.Intrinsic.ui.SetBrowserOOT(True)
+F.Intrinsic.UI.browser("Select an employee","conx",V.Local.sQuery,V.Local.sCol,V.Local.sColW,5000,5000,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,"<>","***CANCEL***")
+	Gui.F_Extra.txtEmployee.Text("")
+	Gui.F_Extra.txtEmployee.ClearMetadata
+	Gui.F_Extra.txtTicketID.Text("")
+	Gui.F_Extra.txtLine.Text("")
+	Gui.F_Extra.txtLine.ClearMetadata
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.F_Extra.txtEmployee.SetMetaData(V.Local.sRet(0),V.Local.sRet(1))
+	Gui.F_Extra.txtEmployee.Text(V.Local.sRet(0))
+F.Intrinsic.Control.Endif
+
+
+
+program.sub.cmdemployee_click.end
+
+program.sub.cmdline_click.start
+V.Local.sCol.Declare(String)
+V.local.sColW.Declare(String)
+V.Local.sQuery.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sHash.Declare(String)
+'F.Intrinsic.debug.InvokeDebugger
+'
+F.Intrinsic.String.Split("Customer Name*!*Ship-To Customer Name*!*Ticket ID*!*Line #*!*Discipline*!*Activity*!*Billing Unit*!*Rate*!*Date Entered","*!*",V.Local.sCol)
+F.Intrinsic.String.Split("2800*!*2800*!*750*!*750*!*2250*!*2250*!*1500*!*750*!*1250","*!*",V.Local.sColW)
+'V.Local.sQuery.Set("Select H.CUSTOMER, H.CUSTOMER, S.CUSTOMER_NAME, H.SHIPTO, L.TICKET_ID, L.LINE, L.ASSIGNED_EMPLOYEE, L.DISCIPLINE_ID, L.ACTIVITY_ID, L.BILLING_UNIT, L.CONTRACT_RATE, L.ENTERED_DATE FROM (ATG_TMK_TICKET_H H LEFT JOIN V_OE_MULTI_SHIP S ON S.CUSTOMER=H.CUSTOMER AND S.SHIP_SEQ=H.SHIPTO), ATG_TMK_TICKET_L L Where H.TICKET_ID=L.TICKET_ID ORDER BY L.ENTERED_DATE, H.CUSTOMER,S.CUSTOMER_NAME")
+F.Intrinsic.string.concat("Select H.CUSTOMER, CONCAT(LTRIM(RTRIM(H.CUSTOMER)),LTRIM(RTRIM(H.SHIPTO))) AS SHIP_HASH,  L.TICKET_ID, L.LINE, L.DISCIPLINE_ID, L.ACTIVITY_ID, L.BILLING_UNIT, L.CONTRACT_RATE, L.ENTERED_DATE FROM ATG_3583_TMK_TICKET_H H, ATG_TMK_TICKET_L L Where H.TICKET_ID=L.TICKET_ID AND L.ASSIGNED_EMPLOYEE='",V.Screen.F_Extra!txtEmployee.MetaData1,"' ORDER BY H.CUSTOMER ASC,H.SHIPTO ASC, L.TICKET_ID ASC, L.LINE ASC",V.Local.sQuery)
+V.Local.sHash.Set("htCustomer|0|1|Customer not found*!*htShipTo|0|1|Ship-To not found*!* *!* *!*htDiscipline|0|1|Discipline not found*!*htActivity|0|1|Activity not found")
+
+f.Intrinsic.UI.setbrowserhashlookup(V.Local.sHash)
+F.Intrinsic.UI.browser("Select a Line","conx",V.Local.sQuery,V.Local.sCol,V.Local.sColW,16100,7000,V.Local.sRet)
+f.Intrinsic.UI.setbrowserhashlookup("")
+
+F.Intrinsic.Control.If(V.Local.sRet,"<>","***CANCEL***")
+	Gui.F_Extra.txtTicketID.Text("")
+	Gui.F_Extra.txtLine.Text("")
+	Gui.F_Extra.txtLine.ClearMetadata
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.F_Extra.txtTicketID.Text(V.Local.sRet(2))
+	Gui.F_Extra.txtLine.SetMetaData(V.Local.sRet(3),V.Local.sRet(6))
+	Gui.F_Extra.txtLine.Text(V.Local.sRet(3))
+	Gui.F_Extra.txtRate.Text(V.Local.sRet(7))
+	F.Intrinsic.Control.If(V.Local.sRet(6),=,"Hours")
+		Gui.F_Extra.txtBValue.Text("")
+	F.Intrinsic.Control.Else
+		Gui.F_Extra.txtBValue.Text("0.0")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Endif
+
+
+
+program.sub.cmdline_click.end
+
+program.sub.txtemployee_change.start
+F.Intrinsic.Control.If(V.Screen.F_Extra!txtEmployee.Text,=,"")
+	Gui.F_Extra.cmdLine.Enabled(False)
+F.Intrinsic.Control.Else
+	Gui.F_Extra.cmdLine.Enabled(True)
+F.Intrinsic.Control.EndIf
+
+program.sub.txtemployee_change.end
+
+program.sub.dtpstartdate_lostfocus.start
+'F.Intrinsic.Debug.InvokeDebugger
+
+F.Intrinsic.Control.If(V.Global.bNewBusy,=,True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+V.Global.bNewBusy.Set(True)
+F.Intrinsic.Control.CallSub("NewLineHours","dStartDate",V.Screen.F_Extra!dtpStartDate.Value,"dStartTime",V.Screen.F_Extra!txtStartTime.Text,"sHours",V.screen.F_Extra!txtHours.text)
+Gui.F_Extra.dtpEndDate.Value(V.Args.dEndDate)
+Gui.F_Extra.txtEndTime.Text(V.Args.dEndTime)
+V.Global.bNewBusy.Set(False)
+F.Intrinsic.Control.If(V.Global.bSaveLine,=,True)
+	V.Global.bSaveLine.Set(False)
+	F.Intrinsic.Control.CallSub("cmdsave_click")
+F.Intrinsic.Control.EndIf
+
+program.sub.dtpstartdate_lostfocus.end
+
+program.sub.txtstarttime_lostfocus.start
+F.Intrinsic.Control.If(V.Global.bNewBusy,=,True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+V.Global.bNewBusy.Set(True)
+V.Local.sTime.Declare(String)
+V.Local.sTime.Set(V.Screen.F_Extra!txtStartTime.Text)
+
+F.Intrinsic.Control.If(V.Local.sTime,=,"")
+	Gui.F_Extra.txtStartTime.Text(V.Screen.F_Extra!txtStartTime.MetaData0)
+	F.Intrinsic.UI.Msgbox("Please enter Start Time in a hh:mm:ss AM/PM format.")
+F.Intrinsic.Control.ElseIf(V.Local.sTime.IsDate,=,True)
+	F.Intrinsic.String.Format(V.Local.sTime,"h:Nn:ss AM/PM",V.Local.sTime)
+	Gui.F_Extra.txtStartTime.Text(V.Local.sTime)
+	Gui.F_Extra.txtStartTime.SetMetadata(V.local.sTime,V.local.sTime)
+	F.Intrinsic.Control.CallSub("NewLineHours","dStartDate",V.Screen.F_Extra!dtpStartDate.Value,"dStartTime",V.Screen.F_Extra!txtStartTime.Text,"sHours",V.screen.F_Extra!txtHours.text)
+	Gui.F_Extra.dtpEndDate.Value(V.Args.dEndDate)
+	Gui.F_Extra.txtEndTime.Text(V.Args.dEndTime)
+F.Intrinsic.Control.Else
+	Gui.F_Extra.txtStartTime.Text(V.Screen.F_Extra!txtStartTime.MetaData0)
+	F.Intrinsic.UI.Msgbox("Please enter Start Time in a hh:mm:ss AM/PM format.")
+F.Intrinsic.Control.EndIf
+
+V.Global.bNewBusy.Set(False)
+F.Intrinsic.Control.If(V.Global.bSaveLine,=,True)
+	V.Global.bSaveLine.Set(False)
+	F.Intrinsic.Control.CallSub("cmdsave_click")
+F.Intrinsic.Control.EndIf
+
+program.sub.txtstarttime_lostfocus.end
+
+program.sub.txthours_lostfocus.start
+F.Intrinsic.Control.If(V.Global.bNewBusy,=,True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+V.Global.bNewBusy.Set(True)
+V.Local.sTime.Declare(String)
+V.Local.iLen.Declare(Long)
+V.Local.iInstr.Declare(Long)
+V.Local.sMid.Declare(String)
+V.Local.sHours.Declare(String)
+V.Local.bIsHours.Declare(Boolean,False)
+V.Local.bIsNumeric.Declare(Boolean)
+V.Local.sTime.Set(V.Screen.F_Extra!txtHours.Text)
+
+F.Intrinsic.String.Instr(V.Local.sTime,":",V.Local.iInstr)
+F.Intrinsic.Control.If(V.Local.iInstr,<>,0)
+	F.Intrinsic.String.Split(V.Local.sTime,":",V.Local.sTime)
+	F.Intrinsic.Math.IsNumeric(V.Local.sTime(0),V.Local.bIsNumeric)
+	F.Intrinsic.Control.If(V.Local.bIsNumeric,=,True)
+		F.Intrinsic.Math.IsNumeric(V.Local.sTime(1),V.Local.bIsNumeric)
+		F.Intrinsic.Control.If(V.Local.bIsNumeric,=,True)
+			F.Intrinsic.Control.If(V.Local.sTime(1).Length,=,2)
+				F.Intrinsic.String.Concat(V.Local.sTime(0),":",V.Local.sTime(1),V.Local.sHours)
+				V.Local.bIsHours.Set(True)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.Math.IsNumeric(V.Local.sTime,V.Local.bIsNumeric)
+	F.Intrinsic.Control.If(V.Local.bIsNumeric,=,True)
+		F.Intrinsic.Control.CallSub("HoursTime","fHours",V.Local.sTime)
+		V.Local.sHours.Set(V.Args.sHours)
+		V.Local.bIsHours.Set(True)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Local.bIsHours,=,True)
+	F.Intrinsic.String.Format(V.Local.sHours,"h:Nn",V.Local.sHours)
+	F.Intrinsic.Control.CallSub("HoursDec","sHours",V.local.sHours)
+	Gui.F_Extra.txthours.Text(V.Local.sHours)
+	Gui.F_Extra.txtHours.SetMetaData(V.local.sHours,V.Args.fHours)
+	F.Intrinsic.Control.CallSub("NewLineHours","dStartDate",V.Screen.F_Extra!dtpStartDate.Value,"dStartTime",V.Screen.F_Extra!txtStartTime.Text,"sHours",V.screen.F_Extra!txtHours.text)
+	Gui.F_Extra.dtpEndDate.Value(V.Args.dEndDate)
+	Gui.F_Extra.txtEndTime.Text(V.Args.dEndTime)
+	F.Intrinsic.Control.CallSub("Billing")
+F.Intrinsic.Control.Else
+'	F.Intrinsic.Control.CallSub("NewLineCellCheck")
+	Gui.F_Extra.txtHours.text(V.Screen.F_Extra!txtHours.MetaData0)
+	F.Intrinsic.UI.Msgbox("Please enter Hours in a h:mm format.")
+	V.Global.bSaveLine.Set(False)
+F.Intrinsic.Control.EndIf
+
+V.Global.bNewBusy.Set(False)
+F.Intrinsic.Control.If(V.Global.bSaveLine,=,True)
+	V.Global.bSaveLine.Set(False)
+	F.Intrinsic.Control.CallSub("cmdsave_click")
+F.Intrinsic.Control.EndIf
+
+'
+program.sub.txthours_lostfocus.end
+
+Program.Sub.NewLineHours.Start
+V.Local.dStart.Declare(Date)
+V.Local.dStartTime.Declare(Date)
+V.Local.dEnd.Declare(Date)
+V.Local.dEndTime.Declare(Date)
+V.Local.sHours.Declare(String)
+V.Local.iHours.Declare(Long)
+V.Local.iMin.Declare(Long)
+V.Local.sEndTime.Declare(String)
+V.Local.sStart.Declare(String)
+V.Local.iDays.Declare(Long)
+'F.Intrinsic.Debug.InvokeDebugger
+F.Intrinsic.Debug.stop
+
+F.Intrinsic.String.Format(V.Args.dStartDate,"MM/DD/YYYY",V.Local.sStart)
+V.Local.dStart.Set(V.local.sStart)
+V.Local.dStartTime.Set(V.args.dStartTime)
+F.Intrinsic.String.Concat(V.local.dStart," ",V.Args.dStartTime,V.Local.sStart)
+F.Intrinsic.string.format(V.Local.sStart,"MM/DD/YYYY HH:NN:SS",V.Local.dStart)
+
+F.Intrinsic.String.Split(V.args.sHours,":",V.Local.sHours)
+V.Local.iHours.Set(V.Local.sHours(0))
+V.Local.iMin.Set(V.Local.sHours(1))
+
+F.Intrinsic.Math.IDiv(V.Local.iHours,24,V.Local.iDays)
+F.Intrinsic.Math.Mod(V.Local.iHours,24,V.Local.iHours)
+F.Intrinsic.Math.Mult(V.Local.iHours,60,V.Local.iHours)
+F.Intrinsic.Math.Add(V.Local.iHours,V.Local.iMin,V.Local.iMin)
+
+F.Intrinsic.Date.DateAdd("d",V.Local.iDays,V.Local.dStart,V.Local.dStart)
+F.Intrinsic.Date.DateAdd("n",V.Local.iMin,V.Local.dStart,V.Local.dEnd)
+
+F.Intrinsic.string.Format(V.Local.dEnd,"Hh:Nn:ss AM/PM",V.Local.sEndTime)
+V.Local.dEndTime.Set(V.Local.sEndTime)
+F.Intrinsic.Variable.AddRV("dEndDate",V.Local.dEnd)
+F.Intrinsic.Variable.AddRV("dEndTime",V.Local.dEndTime)
+
+
+
+
+
+Program.Sub.NewLineHours.End
+
+Program.Sub.ClearNewLine.Start
+V.Local.dTime.Declare(Date)
+F.Intrinsic.String.Format(V.Ambient.Now,"h:Nn:ss AM/PM",V.Local.dTime)
+
+Gui.F_Extra.txtEmployee.ClearMetadata
+Gui.F_Extra.txtHours.ClearMetadata
+Gui.F_Extra.txtStartTime.ClearMetadata
+Gui.F_Extra.txtEndTime.ClearMetadata
+Gui.F_Extra.txtLine.ClearMetadata
+Gui.F_Extra.dtpStartDate.Value(V.Ambient.Now)
+Gui.F_Extra.txtStartTime.Text(V.Local.dTime)
+Gui.F_Extra.txtStartTime.SetMetaData(V.Local.dTime,V.local.dTime)
+Gui.F_Extra.dtpEndDate.Value(V.Ambient.Now)
+Gui.F_Extra.txtEndTime.Text(V.Local.dTime)
+Gui.F_Extra.txtEndTime.SetMetaData(V.Local.dTime,V.Local.dTime)
+Gui.F_Extra.txtHours.SetMetaData(0.0,0.0)
+Gui.F_Extra.txtHours.Text("0:00")
+Gui.F_Extra.txtBValue.Text("0.0")
+Gui.F_Extra.txtEmployee.Text("")
+Gui.F_Extra.txtTicketID.Text("")
+Gui.F_Extra.txtRate.Text("0.0")
+Gui.F_Extra.txtBilling.Text("0.0")
+Gui.F_Extra.txtLine.Text("")
+Gui.F_Extra.txtR.Text("")
+
+
+
+
+
+Program.Sub.ClearNewLine.End
+
+Program.Sub.HoursTime.Start
+V.Local.iMin.Declare(Float)
+V.Local.iHours.Declare(Long)
+V.Local.sHours.Declare(String)
+V.Local.sMin.Declare(String)
+V.Local.iLength.Declare(Long)
+
+F.Intrinsic.Math.Mult(V.Args.fHours,60,V.Local.iMin)
+F.Intrinsic.Math.Round(V.Local.iMin,0,V.Local.iMin)
+F.Intrinsic.Math.ConvertToLong(V.Local.iMin,V.Local.iMin)
+F.Intrinsic.Math.IDiv(V.Local.iMin,60,V.Local.iHours)
+F.Intrinsic.Math.Mod(V.Local.iMin,60,V.Local.iMin)
+V.Local.sMin.Set(V.Local.iMin)
+F.Intrinsic.String.Len(V.Local.sMin,V.Local.iLength)
+F.Intrinsic.Control.If(V.Local.iLength,<,2)
+	F.Intrinsic.String.Concat("0",V.Local.sMin,V.Local.sMin)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Concat(V.Local.iHours,":",V.Local.sMin,V.Local.sHours)
+F.Intrinsic.Variable.AddRV("sHours",V.Local.sHours)
+
+
+
+Program.Sub.HoursTime.End
+
+program.sub.cmdfilter_click.start
+'Checks to see if User wants to apply changes before loading filtered detail records
+Gui.F_Ticket_Approval.cmdFilter.Enabled("False")
+V.Local.sRet.Declare(String)
+V.Local.sTemp.Declare(String)
+
+Gui.F_Ticket_Approval.gsfgLines.GetTextMatrix(0,1,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+	F.Intrinsic.UI.Msgbox("Would you like to apply changes?  If no, all changes will be lost.","Filter",3,V.Local.sRet)
+	F.Intrinsic.Control.SelectCase(V.Local.sRet)
+		F.Intrinsic.Control.Case(6)
+
+			Gui.F_Ticket_Approval..Visible("False")
+			F.Intrinsic.UI.InvokeWaitDialog("Saving...","Updating Detail Records")
+			F.Intrinsic.Control.CallSub("ApplyChanges")
+		F.Intrinsic.Control.Case(2)
+			Gui.F_Ticket_Approval.cmdFilter.Enabled("True")
+			F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndSelect
+F.Intrinsic.Control.EndIf
+Gui.F_Ticket_Approval..Visible("False")
+F.Intrinsic.UI.InvokeWaitDialog("Loading...","Filtering Detail Records")
+V.Local.sQuery.Declare(String)
+
+F.Intrinsic.Control.CallSub("LoadGrid")
+F.Intrinsic.UI.CloseWaitDialog
+Gui.F_Ticket_Approval..Visible("True")
+'F.Intrinsic.Debug.InvokeDebugger
+'F.Intrinsic.Debug.Stop
+
+program.sub.cmdfilter_click.end
+
+program.sub.gsfglines_commandclick.start
+
+F.Intrinsic.Control.If(V.Global.bLoad,=,True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+V.Global.bLoad.Set(True)
+
+V.Local.sRow.Declare(String)
+V.Local.sTime.Declare(String)
+V.Local.dTime.Declare(Date)
+V.Local.sTemp.Declare(String)
+'F.Intrinsic.UI.Msgbox(V.Args.key)
+Gui.F_Ticket_Approval.gsfgLines.ReadRow(V.Args.key,V.Local.sRow)
+F.Intrinsic.String.Split(V.Local.sRow,"*!*",V.Local.sRow)
+Gui.F_Ticket_Approval..Enabled(False)
+Gui.F_Ticket_Approval.cmdApplyChanges.Enabled("False")
+Gui.F_Ticket_Approval.cmdAddLine.Enabled(False)
+Gui.F_Ticket_Approval.gsfgLines.Enabled("False")
+Gui.F_Ticket_Approval.cmdFilter.Enabled("False")
+F.Intrinsic.Control.CallSub("ClearNewLine")
+Gui.F_Extra.cmdSave.Caption("Apply")
+Gui.F_Extra.cmdEmployee.Visible(False)
+Gui.F_Extra.cmdLine.Visible(False)
+Gui.F_Extra.txtR.Text(V.Args.key)
+Gui.F_Extra..Caption("Edit Line")
+Gui.F_Extra.tabDetails.SetTab(0)
+Gui.F_Extra.lblBValue.Visible(True)
+Gui.F_Extra.txtBValue.Visible(True)
+Gui.F_Extra.txtEmployee.Text(V.Local.sRow(0))
+'Gui.F_Extra.txtTicketID.Text(V.Local.sRow(14))
+'Gui.F_Extra.txtLine.SetMetaData(V.Local.sRow(15),V.Local.sRow(5))
+'Gui.F_Extra.txtLine.Text(V.Local.sRow(15))
+'Gui.F_Extra.dtpStartDate.Value(V.Local.sRow(6))
+'Gui.F_Extra.txtStartTime.Text(V.Local.sRow(7))
+'Gui.F_Extra.txtStartTime.SetMetaData(V.Local.sRow(7),V.Local.sRow(7))
+'Gui.F_Extra.dtpEndDate.Value(V.Local.sRow(8))
+'Gui.F_Extra.txtEndTime.Text(V.Local.sRow(9))
+'Gui.F_Extra.txtEndTime.SetMetaData(V.Local.sRow(9),V.Local.sRow(9))
+'Gui.F_Extra.txtHours.Text(V.Local.sRow(10))
+'F.Intrinsic.Control.CallSub("HoursDec","sHours",V.local.srOW(10))
+'Gui.F_Extra.txtHours.SetMetaData(V.local.srOW(10),V.Args.fHours)
+Gui.F_Extra.lblDetail.Visible(True)
+Gui.F_Extra.txtDetail.Visible(True)
+Gui.F_Extra.txtDetail.Text(V.Local.sRow(13))
+'F.Intrinsic.Control.If(V.Local.sRow(11),<>,"")
+'	Gui.F_Extra.txtBValue.Text(V.Local.sRow(11))
+'F.intrinsic.Control.EndIf
+
+Gui.F_Extra..Show
+
+V.Local.sQuery.Declare(String)
+F.Intrinsic.String.Concat("Select D.TICKET_ID, D.TICKET_LINE, L.BILLING_UNIT,D.START_DATE, D.Start_Time, D.End_Date,D.End_Time,L.CONTRACT_RATE, D.HOURS,D.B_VALUE, D.DETAIL_ID,D.COMMENTS, D.Notes from ATG_3583_TMK_TICKET_D D, ATG_3583_TMK_TICKET_L L where L.TICKET_ID=D.TICKET_ID AND L.LINE=D.TICKET_LINE AND DETAIL_ID=",V.local.sRow(13),V.Local.sQuery)
+F.ODBC.Connection!conx.OpenRecordsetRw("rstDetailLoad",V.Local.sQuery)
+F.Intrinsic.Control.If(V.ODBC.conx!rstDetailLoad.EOF,<>,True)
+	Gui.F_Extra.txtTicketID.Text(V.ODBC.conx!rstDetailLoad.FieldValTrim!TICKET_ID)
+	Gui.F_Extra.txtLine.SetMetaData(V.ODBC.conx!rstDetailLoad.FieldValTrim!TICKET_LINE,V.ODBC.conx!rstDetailLoad.FieldValTrim!BILLING_UNIT)
+	Gui.F_Extra.txtLine.Text(V.ODBC.conx!rstDetailLoad.FieldValTrim!TICKET_LINE)
+	Gui.F_Extra.dtpStartDate.Value(V.ODBC.conx!rstDetailLoad.FieldValTrim!START_DATE)
+	F.Intrinsic.String.Right(V.ODBC.conx!rstDetailLoad.FieldValTrim!Start_Time,11,V.Local.sTime)
+	F.Intrinsic.String.Format(V.Local.sTime,"Hh:Nn:ss AM/PM",V.Local.sTime)
+	V.Local.dTime.Set(V.Local.sTime)
+	Gui.F_Extra.txtStartTime.Text(V.Local.sTime)
+	Gui.F_Extra.txtStartTime.SetMetaData(V.Local.sTime,V.Local.sTime)
+	Gui.F_Extra.dtpEndDate.Value(V.ODBC.conx!rstDetailLoad.FieldValTrim!End_Date)
+	F.Intrinsic.String.Right(V.ODBC.conx!rstDetailLoad.FieldValTrim!End_Time,11,V.Local.sTime)
+	F.Intrinsic.String.Format(V.Local.sTime,"Hh:Nn:ss AM/PM",V.Local.sTime)
+	V.Local.dTime.Set(V.Local.sTime)
+	Gui.F_Extra.txtEndTime.Text(V.Local.sTime)
+	Gui.F_Extra.txtEndTime.SetMetaData(V.Local.sTime,V.Local.sTime)
+	F.Intrinsic.String.Format(V.ODBC.conx!rstDetailLoad.FieldValTrim!HOURS,"####0.00",V.Local.sTemp)
+	F.Intrinsic.Control.CallSub("HoursTime","fHours",V.Local.sTemp)
+	Gui.F_Extra.txthours.Text(V.args.sHours)
+	Gui.F_Extra.txtHours.SetMetaData(V.Args.sHours,V.Local.sTemp)
+	F.Intrinsic.Control.If(V.ODBC.conx!rstDetailLoad.FieldValTrim!BILLING_UNIT,<>,"Hours")
+		F.Intrinsic.String.Format(V.ODBC.conx!rstDetailLoad.FieldValTrim!B_VALUE,"####0.00",V.Local.sTemp)
+		Gui.F_Extra.txtBValue.Text(V.Local.sTemp)
+	F.Intrinsic.Control.EndIf
+	Gui.F_Extra.txtRate.Text(V.ODBC.conx!rstDetailLoad.FieldValTrim!CONTRACT_RATE)
+	F.Intrinsic.Control.CallSub("Billing")
+	Gui.F_Extra.txtComments.SetMetaData(V.ODBC.conx!rstDetailLoad.FieldValTrim!DETAIL_ID,V.ODBC.conx!rstDetailLoad.FieldValTrim!TICKET_ID,V.ODBC.conx!rstDetailLoad.FieldValTrim!TICKET_LINE)
+	Gui.F_Extra.txtComments.Text(V.ODBC.conx!rstDetailLoad.FieldValTrim!COMMENTS)
+	Gui.F_Extra.txtNotes.Text(V.ODBC.conx!rstDetailLoad.FieldValTrim!Notes)
+F.Intrinsic.Control.endif
+
+F.ODBC.conx!rstDetailLoad.close
+
+
+program.sub.gsfglines_commandclick.end
+
+Program.Sub.Hours.Start
+V.Local.sStart.Declare(String)
+V.Local.sEnd.Declare(String)
+V.Local.dStart.Declare(Date)
+V.Local.dEnd.Declare(Date)
+V.Local.sRow.Declare(String)
+V.Local.iMin.Declare(Long)
+V.Local.iHours.Declare(Long)
+V.Local.sHours.Declare(String)
+V.Local.iLength.Declare(String)
+V.Local.iDays.Declare(Long)
+V.Local.fHours.Declare(Long)
+V.Local.iInvalidDate.Declare(Long,0)
+V.Local.sTime.Declare(String)
+
+'Gui.F_Ticket_Approval.gsfgLines.ReadRow(V.Args.iR,V.Local.sRow)
+'F.Intrinsic.String.Split(V.Local.sRow,"*!*",V.Local.sRow)
+'V.Local.dStart.Set(V.Local.sRow(6))
+'V.Local.dEnd.Set(V.Local.sRow(8))
+Gui.F_Ticket_Approval.gsfgLines.GetTextMatrix(6,V.Args.iR,V.Local.sTime)
+V.Local.dStart.Set(V.Local.sTime)
+Gui.F_Ticket_Approval.gsfgLines.GetTextMatrix(8,V.Args.iR,V.Local.sTime)
+V.Local.dEnd.Set(V.Local.sTime)
+F.Intrinsic.Date.DateDiff("d",V.Local.dStart,V.Local.dEnd,V.Local.iDays)
+F.Intrinsic.Math.Mult(V.Local.iDays,24,60,V.Local.iDays)
+Gui.F_Ticket_Approval.gsfgLines.GetTextMatrix(7,V.Args.iR,V.Local.sTime)
+V.Local.dStart.Set(V.Local.sTime)
+Gui.F_Ticket_Approval.gsfgLines.GetTextMatrix(9,V.Args.iR,V.Local.sTime)
+V.Local.dEnd.Set(V.Local.sTime)
+'V.Local.dStart.Set(V.Local.sRow(7))
+'V.Local.dEnd.Set(V.Local.sRow(9))
+F.Intrinsic.Date.DateDiff("n",V.Local.dStart,V.Local.dEnd,V.Local.iMin)
+F.Intrinsic.Math.Add(V.Local.iDays,V.Local.iMin,V.Local.iMin)
+F.Intrinsic.Math.Div(V.Local.iMin,60,V.Local.fHours)
+
+F.Intrinsic.Control.If(V.Local.iMin,<,0)
+	V.Local.iInvalidDate.Set(1)
+F.Intrinsic.Control.Else
+	F.Intrinsic.Math.IDiv(V.Local.iMin,60,V.Local.iHours)
+	F.Intrinsic.Math.Mod(V.Local.iMin,60,V.Local.iMin)
+	V.Local.sHours.Set(V.Local.iHours)
+	
+	F.Intrinsic.String.Len(V.Local.iMin,V.Local.iLength)
+	F.Intrinsic.Control.If(V.Local.iLength,<,2)
+		F.Intrinsic.String.Concat(V.Local.sHours,":0",V.local.iMin,V.Local.sHours)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat(V.Local.sHours,":",V.Local.iMin,V.Local.sHours)
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Variable.AddRV("iInvalidDate",V.Local.iInvalidDate)
+F.Intrinsic.Variable.AddRV("sHours",V.Local.sHours)
+F.Intrinsic.Variable.AddRV("fHours",V.Local.fHours)
+
+
+
+Program.Sub.Hours.End
+
+program.sub.txtline_change.start
+F.Intrinsic.Control.If(V.Screen.F_Extra!txtLine.MetaData1,=,"")
+	Gui.F_Extra.lblBValue.Caption("Bill Value")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.UI.Msgbox(V.Screen.F_Extra!txtLine.MetaData1)
+F.Intrinsic.Control.If(V.Screen.F_Extra!txtLine.MetaData1,=,"Hours")
+	Gui.F_Extra.lblBValue.Caption("Bill Value")
+'	Gui.F_Extra..Size(7550,2475)
+	Gui.F_Extra.lblBValue.Visible(False)
+	Gui.F_Extra.txtBValue.Visible(False)
+F.Intrinsic.Control.Else
+	Gui.F_Extra.lblBValue.Caption(V.Screen.F_Extra!txtLine.MetaData1)
+'	Gui.F_Extra..Size(8675,2475)
+	Gui.F_Extra.lblBValue.Visible(True)
+	Gui.F_Extra.txtBValue.Visible(True)
+F.Intrinsic.Control.EndIf
+
+
+program.sub.txtline_change.end
+
+program.sub.cmdsave_click.start
+F.Intrinsic.Control.If(V.Screen.F_Extra!txtR.Text,=,"")
+	F.Intrinsic.Control.CallSub("NewAddLine")
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.CallSub("NewEditLine")
+F.Intrinsic.Control.EndIf
+
+program.sub.cmdsave_click.end
+
+Program.Sub.NewAddLine.Start
+F.Intrinsic.Control.If(V.Global.bNewBusy,=,True)
+	V.Global.bSaveLine.Set(True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+V.Local.sQuery.Declare(String)
+V.Local.bIncomplete.Declare(Boolean,False)
+V.Local.dPDate.Declare(Date)
+F.Intrinsic.Control.If(V.Screen.F_Extra!txtEmployee.Text,=,"")
+	V.Local.bIncomplete.Set(True)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.F_Extra!txtTicketID.Text,=,"")
+	V.Local.bIncomplete.Set(True)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.F_Extra!txtLine.Text,=,"")
+	V.Local.bIncomplete.Set(True)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Local.bIncomplete,=,True)
+	F.Intrinsic.UI.Msgbox("Please complete all fields.")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.F_Extra!txtBValue.Text,<>,"")
+	F.Intrinsic.Math.IsNumeric(V.Screen.F_Extra!txtBValue.Text,V.Local.bIncomplete)
+	F.Intrinsic.Control.If(V.Local.bIncomplete,=,False)
+		F.Intrinsic.UI.Msgbox("Bill Value must be numeric.")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+V.Global.bNewBusy.Set(True)
+F.Intrinsic.String.Concat("Select * from ATG_3583_TMK_TICKET_D where TICKET_ID=",V.Screen.F_Extra!txtTicketID.Text," AND TICKET_LINE=",V.Screen.F_Extra!txtLine.Text,V.Local.sQuery)
+F.ODBC.Connection!conx.OpenRecordsetRW("rstNewLine",V.Local.sQuery)
+
+F.ODBC.conx!rstNewLine.AddNew
+F.ODBC.conx!rstNewLine.Set!TICKET_ID(V.Screen.F_Extra!txtTicketID.text)
+F.ODBC.conx!rstNewLine.Set!TICKET_LINE(V.Screen.F_Extra!txtLine.Text)
+F.ODBC.conx!rstNewLine.Set!START_DATE(V.Screen.F_Extra!dtpStartDate.Value)
+V.Local.dPDate.Set(V.Screen.F_Extra!txtStartTime.Text)
+F.ODBC.conx!rstNewLine.Set!START_TIME(V.local.dPDate)
+F.ODBC.conx!rstNewLine.Set!END_DATE(V.Screen.F_Extra!dtpEndDate.Value)
+V.Local.dPDate.Set(V.Screen.F_Extra!txtEndTime.Text)
+F.ODBC.conx!rstNewLine.Set!END_TIME(V.local.dPDate)
+F.ODBC.conx!rstNewLine.Set!HOURS(V.Screen.F_Extra!txtHours.MetaData1)
+F.ODBC.conx!rstNewLine.Set!BILLING_UNIT(V.Screen.F_Extra!txtLine.MetaData1)
+F.ODBC.conx!rstNewLine.Set!APPROVAL_FLAG(0)
+F.ODBC.conx!rstNewLine.Set!BILLING_FLAG(0)
+F.ODBC.conx!rstNewLine.Set!WORK_COMPLETE_FLAG(1)
+F.ODBC.conx!rstNewLine.Set!EMPLOYEE(V.Screen.F_Extra!txtEmployee.MetaData1)
+F.ODBC.conx!rstNewLine.Set!COMMENTS(V.Screen.F_Extra!txtComments.text)
+F.ODBC.conx!rstNewLine.Set!NOTES(V.Screen.F_Extra!txtNotes.text)
+F.Intrinsic.Control.If(V.Screen.F_Extra!txtLine.MetaData1,<>,"Hours")
+	F.ODBC.conx!rstNewLine.Set!B_VALUE(V.Screen.F_Extra!txtBValue.Text)
+F.Intrinsic.Control.ElseIf(V.Screen.F_Extra!txtBValue.Text,<>,"")
+	F.ODBC.conx!rstNewLine.Set!B_VALUE(V.Screen.F_Extra!txtBValue.Text)
+F.Intrinsic.Control.Else
+	F.ODBC.conx!rstNewLine.Set!B_VALUE(0.0)
+F.Intrinsic.Control.EndIf
+
+F.ODBC.conx!rstNewLine.Update
+F.ODBC.conx!rstNewLine.Close
+
+F.Intrinsic.Control.CallSub("ClearNewLine")
+V.Global.bNewBusy.Set(False)
+
+
+
+
+Program.Sub.NewAddLine.End
+
+Program.Sub.NewEditLine.Start
+F.Intrinsic.Control.If(V.Global.bNewBusy,=,True)
+	V.Global.bSaveLine.Set(True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+V.Local.sQuery.Declare(String)
+V.Local.bIncomplete.Declare(Boolean,False)
+V.Local.dPDate.Declare(Date)
+V.Local.sText.Declare(String)
+F.Intrinsic.Control.If(V.Screen.F_Extra!txtEmployee.Text,=,"")
+	V.Local.bIncomplete.Set(True)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.F_Extra!txtTicketID.Text,=,"")
+	V.Local.bIncomplete.Set(True)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.F_Extra!txtLine.Text,=,"")
+	V.Local.bIncomplete.Set(True)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Local.bIncomplete,=,True)
+	F.Intrinsic.UI.Msgbox("Please complete all fields.")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.F_Extra!txtBValue.Text,<>,"")
+	F.Intrinsic.Math.IsNumeric(V.Screen.F_Extra!txtBValue.Text,V.Local.bIncomplete)
+	F.Intrinsic.Control.If(V.Local.bIncomplete,=,False)
+		F.Intrinsic.UI.Msgbox("Bill Value must be numeric.")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+V.Global.bNewBusy.Set(True)
+
+Gui.F_Ticket_Approval.gsfgLines.TextMatrix(6,V.Screen.F_Extra!txtR.Text,V.Screen.F_Extra!dtpStartDate.Value)
+Gui.F_Ticket_Approval.gsfgLines.TextMatrix(10,V.Screen.F_Extra!txtR.Text,V.Screen.F_Extra!txtHours.Text)
+F.Intrinsic.Control.If(V.Screen.F_Extra!txtLine.MetaData1,<>,"Hours")
+	Gui.F_Ticket_Approval.gsfgLines.TextMatrix(11,V.Screen.F_Extra!txtR.Text,V.Screen.F_Extra!txtBValue.Text)
+F.Intrinsic.Control.Else
+	Gui.F_Ticket_Approval.gsfgLines.TextMatrix(11,V.Screen.F_Extra!txtR.Text,V.Screen.F_Extra!txtHours.MetaData1)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Concat("Select * from ATG_TMK_TICKET_D where DETAIL_ID=",V.Screen.F_Extra!txtDetail.text,V.Local.sQuery)
+F.ODBC.Connection!conx.OpenRecordsetRW("rstEditLine",V.Local.sQuery)
+
+F.Intrinsic.Control.If(V.ODBC.conx!rstEditLine.EOF,<>,True)
+	F.ODBC.conx!rstEditLine.Set!START_DATE(V.Screen.F_Extra!dtpStartDate.Value)
+	V.Local.dPDate.Set(V.Screen.F_Extra!txtStartTime.Text)
+	F.ODBC.conx!rstEditLine.Set!START_TIME(V.local.dPDate)
+	F.ODBC.conx!rstEditLine.Set!END_DATE(V.Screen.F_Extra!dtpEndDate.Value)
+	V.Local.dPDate.Set(V.Screen.F_Extra!txtEndTime.Text)
+	F.ODBC.conx!rstEditLine.Set!END_TIME(V.local.dPDate)
+	F.ODBC.conx!rstEditLine.Set!HOURS(V.Screen.F_Extra!txtHours.MetaData1)
+	F.Intrinsic.Control.If(V.Screen.F_Extra!txtLine.MetaData1,<>,"Hours")
+		F.ODBC.conx!rstEditLine.Set!B_VALUE(V.Screen.F_Extra!txtBValue.Text)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rstEditLine.Set!COMMENTS(V.Screen.F_Extra!txtComments.text)
+	F.ODBC.conx!rstEditLine.Set!NOTES(V.Screen.F_Extra!txtNotes.text)
+	F.ODBC.conx!rstEditLine.Update
+F.Intrinsic.Control.EndIf
+
+F.ODBC.conx!rstEditLine.Close
+
+F.Intrinsic.Control.CallSub("ClearNewLine")
+V.Global.bNewBusy.Set(False)
+F.Intrinsic.Control.CallSub("F_Extra_unload")
+
+
+
+
+Program.Sub.NewEditLine.End
+
+Program.Sub.ApplyChanges.Start
+'Saves Approval and billing flags for all lines, then proceeds to ExceedWarning to make sure no POs exceeded
+V.Local.sQuery.Declare(String)
+V.Local.iR.Declare(Long,0)
+V.Local.iRows.Declare(Long,1)
+V.Local.sRow.Declare(String)
+V.Local.sRow.Redim(0,21)
+V.Local.iCellCheck.Declare(Long,0)
+V.Local.iDateCheck.Declare(Long,0)
+V.Local.iTimeCheck.Declare(Long,0)
+V.Local.sText.Declare(String)
+V.Local.dDate.Declare(Date)
+V.Local.fPercent.Declare(Float)
+
+F.Intrinsic.Math.Add(V.Screen.F_Ticket_Approval!gsfgLines.Rows,-1,V.Local.iRows)
+'F.Intrinsic.Debug.InvokeDebugger
+F.Intrinsic.Control.For(V.Local.iR,1,V.Local.iRows,1)
+
+	Gui.F_Ticket_Approval.gsfgLines.GetTextMatrix(12,V.Local.iR,V.Local.sRow(12))
+	Gui.F_Ticket_Approval.gsfgLines.GetTextMatrix(13,V.Local.iR,V.Local.sRow(13))
+	Gui.F_Ticket_Approval.gsfgLines.GetTextMatrix(20,V.Local.iR,V.Local.sRow(20))
+
+	F.Intrinsic.String.Concat("Select * from ATG_3583_TMK_TICKET_D where DETAIL_ID=",V.local.sRow(13),V.Local.sQuery)
+	F.ODBC.Connection!conx.OpenRecordsetRW("rstSave",V.Local.sQuery)
+	F.Intrinsic.Control.If(V.ODBC.conx!rstSave.EOF,<>,True)
+		F.ODBC.conx!rstSave.Set!APPROVAL_FLAG(V.Local.sRow(20))
+		F.ODBC.conx!rstSave.Set!BILLING_FLAG(V.Local.sRow(12))
+		F.ODBC.conx!rstSave.Update
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rstSave.Close
+	F.Intrinsic.Debug.Stop
+	F.Intrinsic.Math.Div(V.Local.iR,V.Local.iRows,V.Local.fPercent)
+	F.Intrinsic.Math.Mult(V.Local.fPercent,100,V.Local.fPercent)
+	F.Intrinsic.UI.ChangeWaitStatus("Saving...",V.Local.fPercent)
+F.Intrinsic.Control.Next(V.Local.iR)
+
+F.Intrinsic.Control.CallSub("ExceedWarning")
+
+Program.Sub.ApplyChanges.End
+
+Program.Sub.CreateHash.Start
+V.Local.sQuery.Declare(String)
+V.Local.bAdded.Declare(Boolean)
+V.Local.sCurrent.Declare(String)
+V.Local.sEmployees.Declare(String)
+V.Local.sPO.Declare(String)
+
+V.Local.sQuery.Set("select distinct H.customer, C.NAME_CUSTOMER from ATG_3583_TMK_TICKET_H H, V_CUSTOMER_MASTER C where C.CUSTOMER=H.CUSTOMER ORDER BY C.NAME_CUSTOMER ASC")
+F.ODBC.Connection!conx.OpenRecordsetRO("rstHash",V.Local.sQuery)
+
+V.Local.sCurrent.Set(V.Screen.F_Ticket_Approval!drpCustomer.Text)
+V.Local.bAdded.Set(False)
+F.Intrinsic.Hash.Clear("htCustomer")
+Gui.F_Ticket_Approval.drpCustomer.ClearItems
+Gui.F_Ticket_Approval.drpCustomer.AddItem("All")
+'Gui.F_Ticket_Approval.drpCustomer.AddItem("")
+F.Intrinsic.Control.DoUntil(V.ODBC.conx!rstHash.EOF,=,True)
+	F.Intrinsic.Hash.AddItem("htCustomer",V.ODBC.conx!rstHash.FieldValTrim!customer,V.ODBC.conx!rstHash.FieldValTrim!NAME_CUSTOMER)
+	Gui.F_Ticket_Approval.drpCustomer.AddItem(V.ODBC.conx!rstHash.FieldValTrim!NAME_Customer)
+	F.Intrinsic.Control.If(V.Local.sCurrent,=,V.ODBC.conx!rstHash.FieldValTrim!NAME_Customer)
+		V.Local.bAdded.Set(True)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rstHash.movenext
+F.Intrinsic.Control.Loop
+F.ODBC.conx!rstHash.close
+F.Intrinsic.Control.If(V.Local.sCurrent,=,"All")
+	V.Local.bAdded.Set(True)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Local.sCurrent,=,"")
+	V.Local.bAdded.Set(True)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Local.bAdded,=,True)
+	Gui.F_Ticket_Approval.drpCustomer.Text(V.Local.sCurrent)
+F.Intrinsic.Control.Else
+	Gui.F_Ticket_Approval.drpCustomer.Text("All")
+F.Intrinsic.Control.EndIf
+
+V.Local.sQuery.Set("select * from ATG_TMK_DISCIPLINES")
+F.ODBC.Connection!conx.OpenRecordsetRO("rstHash",V.Local.sQuery)
+F.Intrinsic.Hash.Clear("htDiscipline")
+F.Intrinsic.Control.DoUntil(V.ODBC.conx!rstHash.EOF,=,True)
+	F.Intrinsic.Hash.AddItem("htDiscipline",V.ODBC.conx!rstHash.FieldValTrim!DISCIPLINE_ID,V.ODBC.conx!rstHash.FieldValTrim!DESCRIPTION)
+	F.ODBC.conx!rstHash.movenext
+F.Intrinsic.Control.loop
+F.ODBC.conx!rstHash.close
+
+V.Local.sQuery.Set("select * from ATG_3583_TMK_ACTIVITIES")
+F.ODBC.Connection!conx.OpenRecordsetRO("rstHash",V.Local.sQuery)
+F.Intrinsic.Hash.Clear("htActivity")
+F.Intrinsic.Control.DoUntil(V.ODBC.conx!rstHash.EOF,=,True)
+	F.Intrinsic.Hash.AddItem("htActivity",V.ODBC.conx!rstHash.FieldValTrim!ACTIVITIES_ID,V.ODBC.conx!rstHash.FieldValTrim!DESCRIPTION)
+	F.ODBC.conx!rstHash.movenext
+F.Intrinsic.Control.loop
+F.ODBC.conx!rstHash.close
+
+V.Local.sQuery.Set("select * from ATG_3583_TMK_PO")
+F.ODBC.Connection!conx.OpenRecordsetRO("rstHash",V.Local.sQuery)
+F.Intrinsic.Hash.Clear("htPOs")
+F.Intrinsic.Control.DoUntil(V.ODBC.conx!rstHash.EOF,=,True)
+	F.Intrinsic.String.Concat(V.ODBC.conx!rstHash.FieldValTrim!PURCHASE_ORDER,"*!*",V.ODBC.conx!rstHash.FieldValTrim!TOTAL_DOLLARS,"*!*",V.ODBC.conx!rstHash.FieldValTrim!TOTAL_APPLIED,"*!*",V.ODBC.conx!rstHash.FieldValTrim!CUSTOMER,V.Local.sPO)
+	F.Intrinsic.Hash.AddItem("htPOs",V.ODBC.conx!rstHash.FieldValTrim!PO_ID,V.Local.sPO)
+	F.ODBC.conx!rstHash.movenext
+F.Intrinsic.Control.loop
+F.ODBC.conx!rstHash.close
+
+V.Local.sQuery.Set("Select distinct H.CUSTOMER, H.SHIPTO, CONCAT(LTRIM(RTRIM(H.CUSTOMER)),LTRIM(RTRIM(H.SHIPTO)))  AS SHIP_HASH, C.NAME_CUSTOMER_SHIP, S.CUSTOMER_NAME FROM (ATG_3583_TMK_TICKET_H H LEFT JOIN V_OE_MULTI_SHIP S ON S.CUSTOMER=H.CUSTOMER AND S.SHIP_SEQ=H.SHIPTO), V_CUSTOMER_SHIPTO C WHERE C.CUSTOMER=H.CUSTOMER")
+F.ODBC.Connection!conx.OpenRecordsetRO("rstHash",V.Local.sQuery)
+F.Intrinsic.Hash.Clear("htShipTo")
+F.Intrinsic.Control.DoUntil(V.ODBC.conx!rstHash.EOF,=,True)
+	F.Intrinsic.Control.If(V.ODBC.conx!rstHash.FieldValTrim!SHIPTO,=,"")
+		F.Intrinsic.Hash.AddItem("htShipTo",V.ODBC.conx!rstHash.FieldValTrim!SHIP_HASH,V.ODBC.conx!rstHash.FieldValTrim!NAME_CUSTOMER_SHIP)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Hash.AddItem("htShipTo",V.ODBC.conx!rstHash.FieldValTrim!SHIP_HASH,V.ODBC.conx!rstHash.FieldValTrim!CUSTOMER_NAME)
+	F.Intrinsic.Control.endif
+	F.ODBC.conx!rstHash.movenext
+F.Intrinsic.Control.loop
+F.ODBC.conx!rstHash.close
+
+'V.Local.sQuery.Set("select distinct D.EMPLOYEE, E.Name from ATG_TMK_TICKET_D D, V_EMPLOYEE_MSTR E WHERE E.EMPLOYEE=D.EMPLOYEE")
+'V.Local.sQuery.set("Select DISTINCT Employee, Name from V_EMPLOYEE_MSTR E where EMPLOYEE in (SELECT DISTINCT EMPLOYEE FROM ATG_TMK_TICKET_D UNION ALL SELECT DISTINCT ASSIGNED_EMPLOYEE AS EMPLOYEE FROM ATG_TMK_TICKET_L) ORDER BY E.NAME ASC")
+V.Local.sQuery.set("Select DISTINCT Employee, Name from V_EMPLOYEE_MSTR E  ORDER BY E.NAME ASC")
+F.ODBC.Connection!conx.OpenRecordsetRO("rstHash",V.Local.sQuery)
+
+V.Local.sCurrent.Set(V.Screen.F_Ticket_Approval!drpEmployee.Text)
+V.Local.bAdded.Set(False)
+F.Intrinsic.Hash.Clear("htEmployee")
+Gui.F_Ticket_Approval.drpEmployee.ClearItems
+Gui.F_Ticket_Approval.drpEmployee.AddItem("All")
+'Gui.F_Ticket_Approval.drpEmployee.AddItem("")
+F.Intrinsic.Control.DoUntil(V.ODBC.conx!rstHash.EOF,=,True)
+	F.Intrinsic.Hash.AddItem("htEmployee",V.ODBC.conx!rstHash.FieldValTrim!EMPLOYEE,V.ODBC.conx!rstHash.FieldValTrim!NAME)
+	Gui.F_Ticket_Approval.drpEmployee.AddItem(V.ODBC.conx!rstHash.FieldValTrim!NAME)
+	F.Intrinsic.Control.If(V.Local.sCurrent,=,V.ODBC.conx!rstHash.FieldValTrim!NAME)
+		V.Local.bAdded.Set(True)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rstHash.movenext
+F.Intrinsic.Control.loop
+F.ODBC.conx!rstHash.close
+
+F.Intrinsic.Control.If(V.Local.sCurrent,=,"All")
+	V.Local.bAdded.Set(True)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Local.sCurrent,=,"")
+	V.Local.bAdded.Set(True)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Local.bAdded,=,True)
+	Gui.F_Ticket_Approval.drpEmployee.Text(V.Local.sCurrent)
+F.Intrinsic.Control.Else
+	Gui.F_Ticket_Approval.drpEmployee.Text("All")
+F.Intrinsic.Control.EndIf
+
+Program.Sub.CreateHash.End
+
+Program.Sub.FindHash.Start
+V.Local.sEmployee.Declare(String)
+V.Local.sCustomer.Declare(String)
+V.Local.sDiscipline.Declare(String)
+V.Local.sActivity.Declare(String)
+V.Local.sShipTo.Declare(String)
+V.Local.sQuery.Declare(String)
+
+F.Intrinsic.Hash.LookupByKey("htCustomer",V.Args.sCustomerID,True,V.Local.sCustomer)
+F.Intrinsic.Hash.LookupByKey("htShipTo",V.Args.sShipHashID,True,V.Local.sShipTo)
+F.Intrinsic.Hash.LookupByKey("htEmployee",V.Args.sEmployeeID,True,V.Local.sEmployee)
+F.Intrinsic.Hash.LookupByKey("htActivity",V.Args.sActivityID,True,V.Local.sActivity)
+F.Intrinsic.Hash.LookupByKey("htDiscipline",V.Args.sDisciplineID,True,V.Local.sDiscipline)
+
+F.Intrinsic.Variable.AddRV("sCustomer",V.Local.sCustomer)
+F.Intrinsic.Variable.AddRV("sEmployee",V.Local.sEmployee)
+F.Intrinsic.Variable.AddRV("sShipTo",V.Local.sShipTo)
+F.Intrinsic.Variable.AddRV("sActivity",V.Local.sActivity)
+F.Intrinsic.Variable.AddRV("sDiscipline",V.Local.sDiscipline)
+
+Program.Sub.FindHash.End
+
+program.sub.cmddelete_click.start
+'Deletes detail record
+V.Local.sRet.declare(String)
+V.Local.sSQL.Declare(String)
+
+F.Intrinsic.String.Concat("Are you sure you want to delete this Detail record?",V.Ambient.NewLine,"WARNING: This will not save changes.",V.local.sSQL)
+
+F.Intrinsic.UI.Msgbox(V.Local.sSQL,"Delete Detail Record",4,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,=,6)
+	Gui.F_Extra..Visible(False)
+	F.Intrinsic.String.Concat("Delete from ATG_3583_TMK_TICKET_D where DETAIL_ID=",V.Screen.F_Extra!txtDetail.Text,V.Local.sSQL)
+	F.ODBC.connection!conx.Execute(V.Local.sSQL)
+
+	F.Intrinsic.Control.CallSub("F_Extra_Unload")
+	Gui.F_Ticket_Approval..Visible("False")
+	F.Intrinsic.UI.InvokeWaitDialog("Loading...","Filtering Detail Records")
+	F.Intrinsic.Control.CallSub("LoadGrid")
+	F.Intrinsic.UI.CloseWaitDialog
+	Gui.F_Ticket_Approval..Visible("True")
+F.Intrinsic.Control.EndIf
+
+
+program.sub.cmddelete_click.end
+
+program.sub.txthours_gotfocus.start
+Gui.F_Extra.txtHours.SelectAll
+
+program.sub.txthours_gotfocus.end
+
+program.sub.txtbvalue_gotfocus.start
+Gui.F_Extra.txtBValue.SelectAll
+
+program.sub.txtbvalue_gotfocus.end
+
+Program.Sub.BilledExceed_Old.Start
+V.Local.sQuery.Declare(String)
+V.Local.iTotalApplied.Declare(Float)
+V.Local.sPOString.Declare(String)
+V.Local.sPurchaseOrder.Declare(String)
+V.Local.iRows.Declare(Long)
+V.Local.iR.Declare(Long)
+V.Local.sRow.Declare(String)
+V.Local.fHours.Declare(Float)
+V.Local.iPO.Declare(Long)
+V.Local.iBillable.Declare(Long)
+V.Local.fContract.Declare(Float)
+V.Local.fTotalDollars.Declare(Float)
+V.Local.iPOSel.Declare(Long)
+V.Local.iLen.Declare(Long)
+V.Local.sHours.Declare(String)
+V.Local.iDetailID.Declare(Long)
+V.Local.bWork.Declare(Boolean)
+V.Local.bExceeded.Declare(Boolean,False)
+V.Local.iStyle.Declare(Long)
+V.Local.iStyleSet.Declare(Long)
+V.Local.fBilling.Declare(Float)
+
+F.Intrinsic.Control.If(V.Global.bBusy,=,True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+V.Global.bBusy.Set(True)
+
+Gui.F_Ticket_Approval.gsfgLines.ReadRow(V.args.iR,V.Local.sRow)
+F.Intrinsic.String.Split(V.Local.sRow,"*!*",V.Local.sRow)
+F.Intrinsic.Math.Add(V.Screen.F_Ticket_Approval!gsfgLines.Rows,-1,V.Local.iRows)
+
+F.Intrinsic.Hash.LookupByKey("htPOs",V.Local.sRow(16),True,V.Local.sPOString)
+F.Intrinsic.String.Split(V.Local.sPOString,"*!*",V.Local.sPOString)
+F.Intrinsic.Control.If(V.Local.sPOString(1),=,"")
+	V.Global.bBusy.Set(False)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.ElseIf(V.Local.sRow(16),=,"")
+	V.Global.bBusy.Set(False)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+V.Local.iPOSel.Set(V.Local.sRow(16))
+V.Local.sPurchaseOrder.Set(V.Local.sPOString(0))
+V.Local.fTotalDollars.Set(V.Local.sPOString(1))
+V.Local.iTotalApplied.Set(V.Local.sPOString(2))
+
+Gui.F_Ticket_Approval..Visible("False")
+F.Intrinsic.UI.InvokeWaitDialog("Updating...","Updating Detail Records")
+
+V.Local.sQuery.Set("SELECT H.PO_ID,D.B_VALUE, D.Hours, L.BILLING_UNIT,L.Contract_RATE FROM ATG_3583_TMK_TICKET_D D,ATG_TMK_TICKET_L L WHERE H.PO_ID=",V.Local.iPOSel," L.TICKET_ID=D.TICKET_ID AND L.Line=D.TICKET_LINE AND H.TICKET_ID=D.TICKET_ID AND D.BILLING_FLAG=1 AND D.END_DATE IS NOT NULL AND D.DETAIL_ID NOT IN (Select DETAIL_ID from ATG_TMK_TICKET_D WHERE APPROVAL_FLAG=1 AND BILLING_FLAG=1 AND INVOICE_NO IS NOT NULL)")
+F.ODBC.Connection!conx.OpenRecordsetRO("rstExceed",V.Local.sQuery)
+F.Intrinsic.Control.If(V.ODBC.conx!rstExceed.EOF,<>,True)
+	F.Intrinsic.Control.DoUntil(V.ODBC.conx!rstExceed.EOF,=,True)
+		F.Intrinsic.Control.If(V.ODBC.conx!rstExceed.FieldValTrim!BILLING_UNIT,<>,"Hours")
+			F.Intrinsic.Math.Mult(V.ODBC.conx!rstExceed.FieldValTrim!B_VALUE,V.ODBC.conx!rstExceed.FieldValTrim!CONTRACT_RATE,V.Local.fBilling)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Math.Mult(V.ODBC.conx!rstExceed.FieldValTrim!HOURS,V.ODBC.conx!rstExceed.FieldValTrim!CONTRACT_RATE,V.Local.fBilling)
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.Math.Add(V.Local.iTotalApplied,V.Local.fBilling,V.Local.iTotalApplied)
+		F.ODBC.conx!rstExceed.MoveNext
+	F.Intrinsic.Control.Loop
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rstExceed.Close
+
+F.Intrinsic.Control.For(V.Local.iR,1,V.Local.iRows,1)
+	Gui.F_Ticket_Approval.gsfgLines.GetTextMatrix(16,V.Local.iR,V.Local.iPO)
+	F.Intrinsic.Control.If(V.Local.iPO,=,V.local.iPOSel)
+		Gui.F_Ticket_Approval.gsfgLines.GetTextMatrix(12,V.Local.iR,V.Local.iBillable)
+		F.Intrinsic.Control.If(V.Local.iBillable,=,1)
+			Gui.F_Ticket_Approval.gsfgLines.GetTextMatrix(22,V.Local.iR,V.Local.fBilling)
+			F.Intrinsic.Math.Add(V.Local.fBilling,V.Local.iTotalApplied,V.Local.iTotalApplied)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.next(V.Local.iR)
+
+F.Intrinsic.Control.If(V.Local.iTotalApplied,>,V.local.fTotalDollars)
+	F.Intrinsic.Control.If(V.Local.sRow(12),=,1)
+		F.Intrinsic.String.Concat("Warning:",V.Ambient.NewLine,"The Purchase Order ",V.Local.sPurchaseOrder," associated with Ticket ID # ",V.Local.sRow(14)," has exceeded its Total Dollar Amount allowed.",V.Local.sQuery)
+		F.Intrinsic.UI.Msgbox(V.Local.sQuery,"Total Dollar Amount Exceeded")
+	F.Intrinsic.Control.EndIf
+	V.Local.bExceeded.Set(True)
+	V.Local.iStyle.Set(3)
+F.Intrinsic.Control.ElseIf(V.Local.sRow(18),=,True)
+	V.Local.iStyle.Set(5)
+F.Intrinsic.Control.Else
+	V.Local.iStyle.Set(2)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Local.sRow(19),<>,V.Local.iStyle)
+	F.Intrinsic.Control.For(V.Local.iR,1,V.Local.iRows,1)
+		Gui.F_Ticket_Approval.gsfgLines.GetTextMatrix(16,V.Local.iR,V.Local.iPO)
+		F.Intrinsic.Control.If(V.Local.iPO,=,V.Local.iPOSel)
+			Gui.F_Ticket_Approval.gsfgLines.GetTextMatrix(18,V.Local.iR,V.Local.bWork)
+			F.Intrinsic.Control.If(V.Local.bExceeded,=,True)
+				V.Local.iStyle.Set(3)
+			F.Intrinsic.Control.ElseIf(V.Local.bWork,=,True)
+				V.Local.iStyle.Set(5)
+			F.Intrinsic.Control.Else
+				V.Local.iStyle.Set(2)
+			F.Intrinsic.Control.EndIf
+
+			Gui.F_Ticket_Approval.gsfgLines.GetTextMatrix(19,V.Local.iR,V.Local.iStyleSet)
+			F.Intrinsic.Control.If(V.Local.iStyleSet,<>,V.Local.iStyle)
+				Gui.F_Ticket_Approval.gsfgLines.ApplyStyle(V.Local.iR,V.Local.iStyle)
+				Gui.F_Ticket_Approval.gsfgLines.TextMatrix(19,V.Local.iR,V.Local.iStyle)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.UI.ChangeWaitStatus("Updating...")
+	F.Intrinsic.Control.next(V.Local.iR)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.UI.CloseWaitDialog
+Gui.F_Ticket_Approval..Visible("True")
+V.Global.bBusy.Set(False)
+
+Program.Sub.BilledExceed_Old.End
+
+Program.Sub.ExceedWarning.Start
+V.Local.sRet.declare(String)
+V.Local.sPOHash.Declare(String)
+V.Local.sPOsExceed.Declare(String)
+V.Local.sPO.Declare(String)
+V.Local.iC.Declare(Long)
+V.Local.sQuery.Declare(String)
+V.Local.sCustomer.Declare(String)
+V.Local.fApplied.Declare(Float)
+V.Local.iR.Declare(Long)
+V.Local.iRows.Declare(Long)
+V.Local.sPOsLoaded.Declare(String)
+V.Local.sPOsloaded.Redim(-1,-1)
+V.Local.iUB.Declare(Long,-1)
+V.Local.iC2.Declare(Long)
+V.Local.iTicket.Declare(Long)
+V.Local.sCurrentPO.Declare(String)
+
+F.Intrinsic.Control.ErrorResume(True)
+F.Intrinsic.Control.ClearErrors
+
+F.Intrinsic.UI.ChangeWaitStatus("Checking POs...")
+F.Intrinsic.Control.CallSub("LoadExceed")
+
+V.Global.bPOsLoaded.Set(True)
+F.Intrinsic.Control.If(V.global.POsExceeded,<>,"")
+'	F.Intrinsic.String.Concat("WARNING: The Tickets associated with the following POs and Customers have exceeded their Total Dollars by the listed amount:",V.Ambient.NewLine,V.Local.sQuery)
+	
+	F.Intrinsic.Math.Add(V.Screen.F_Ticket_Approval!gsfgLines.Rows,-1,V.Local.iRows)
+	F.Intrinsic.Debug.SetLA("Exceed Warning gsfgLines.Rows - 1 = ",V.Local.iRows)
+	F.Intrinsic.Control.For(V.Local.iR,1,V.Local.iRows,1)
+		F.Intrinsic.Debug.SetLA("gsfGLines iR = ",V.Local.iR)
+		Gui.F_Ticket_Approval.gsfgLines.GetTextMatrix(16,V.Local.iR,V.Local.sPO)
+		F.Intrinsic.Control.If(V.Local.sPO,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iUB,1,V.Local.iUB)
+			F.Intrinsic.Control.If(V.Local.iUB,=,0)
+				V.Local.sPOsLoaded.Redim(0,0)
+			F.Intrinsic.Control.Else
+				V.Local.sPOsLoaded.RedimPreserve(0,V.Local.iUB)
+			F.Intrinsic.Control.EndIf
+
+			Gui.F_Ticket_Approval.gsfgLines.GetTextMatrix(14,V.Local.iR,V.Local.iTicket)
+			F.Intrinsic.String.Concat(V.Local.sPO,"*!*",V.Local.iTicket,V.Local.sPO)
+
+			V.Local.sPOsLoaded(v.Local.iUB).Set(V.Local.sPO)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iR)
+
+'	F.Intrinsic.Debug.InvokeDebugger
+'	F.Intrinsic.Debug.Stop
+'	F.Intrinsic.Debug.Stop
+	F.Intrinsic.Control.If(V.Local.sPOsLoaded.UBound,>,0)
+		F.Intrinsic.String.RemoveArrayDuplicates(V.Local.sPOsLoaded,V.Local.sPOsLoaded)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Split(V.global.POsExceeded,"!*!",V.Local.sPOsExceed)
+
+'Loops through V.Global.POsExceeded (ALL POs exceeded) for just the POs for the lines loaded.  Adds it to user warning
+	F.Intrinsic.Control.For(V.Local.iC,0,V.Local.sPOsLoaded.UBound,1)
+		F.Intrinsic.String.Split(V.Local.sPOsLoaded(v.Local.iC),"*!*",V.Local.sCurrentPO)
+		F.Intrinsic.Control.For(V.Local.iC2,0,V.Local.sPOsExceed.UBound,1)
+			F.Intrinsic.String.Split(V.Local.sPOsExceed(v.Local.iC2),"*!*",V.Local.sPO)
+			F.Intrinsic.Control.If(V.Local.sPO(0),=,V.Local.sCurrentPO(0))
+				F.Intrinsic.Hash.LookupByKey("htPOs",V.Local.sPO(0),True,V.Local.sPOHash)
+				F.Intrinsic.Control.If(V.Local.sPOHash,<>,"")
+					F.Intrinsic.String.Split(V.Local.sPOHash,"*!*",V.Local.sPOHash)
+					F.Intrinsic.Hash.LookupByKey("htCustomer",V.Local.sPOHash(3),True,V.Local.sCustomer)
+					F.Intrinsic.Control.If(V.Local.sCustomer,<>,"")
+						F.Intrinsic.String.Format(V.Local.sPO(1),"#####0.00",V.Local.fApplied)
+						F.Intrinsic.Control.If(V.Local.sQuery,=,"")
+							F.Intrinsic.String.Concat("WARNING: The Tickets associated with the following POs and Customers have exceeded their Total Dollars by the listed amount:",V.Ambient.NewLine,V.Local.sQuery)
+						F.Intrinsic.Control.EndIf
+						F.Intrinsic.String.Concat(V.Local.sQuery,V.Ambient.NewLine,"Ticket # ",V.Local.sCurrentPO(1),": ",V.Local.sPOHash(0)," - ",V.Local.sCustomer," - $",V.Local.fApplied,V.Local.sQuery)
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.ExitFor(V.Local.iC2)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.iC2)
+	F.Intrinsic.Control.Next(V.Local.iC)
+
+	F.Intrinsic.Control.If(V.Local.sQuery,<>,"")
+		F.Intrinsic.String.Concat(V.Local.sQuery,V.Ambient.NewLine,V.ambient.newline,"Do you want to return to the previous lines to edit?",V.Local.sQuery)
+		F.Intrinsic.UI.Msgbox(V.Local.sQuery,"POs Exceeded",4,V.Local.sRet)
+
+		F.Intrinsic.Control.If(V.Local.sRet,=,6)
+			Gui.F_Ticket_Approval.drpCustomer.Text(V.Screen.F_Ticket_Approval!drpCustomer.MetaData0)
+			Gui.F_Ticket_Approval.drpEmployee.Text(V.Screen.F_Ticket_Approval!drpEmployee.MetaData0)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ClearErrors
+F.Intrinsic.Control.ErrorResume(False)
+
+'
+'V.Local.sRet.declare(String)
+'V.Local.sPOHash.Declare(String)
+'V.Local.sPOsExceed.Declare(String)
+'V.Local.sPO.Declare(String)
+'V.Local.iC.Declare(Long)
+'V.Local.sQuery.Declare(String)
+'V.Local.sCustomer.Declare(String)
+'V.Local.fApplied.Declare(Float)
+'V.Local.iR.Declare(Long)
+'V.Local.iRows.Declare(Long)
+'V.Local.sPOsLoaded.Declare(String)
+'V.Local.sPOsloaded.Redim(-1,-1)
+'V.Local.iUB.Declare(Long,-1)
+'V.Local.iC2.Declare(Long)
+'
+'F.Intrinsic.UI.ChangeWaitStatus("Checking POs...")
+''F.Intrinsic.Debug.InvokeDebugger
+'F.Intrinsic.Debug.Stop
+'F.Intrinsic.Control.CallSub("LoadExceed")
+'V.Global.bPOsLoaded.Set(True)
+'F.Intrinsic.Control.If(V.global.POsExceeded,<>,"")
+'	F.Intrinsic.String.Concat("WARNING: The POs associated with the following Customers have exceeded their Total Dollars by the listed amount:",V.Ambient.NewLine,V.Local.sQuery)
+'
+'	F.Intrinsic.Math.Add(V.Screen.F_Ticket_Approval!gsfgLines.Rows,-1,V.Local.iRows)
+'	F.Intrinsic.Control.For(V.Local.iR,1,V.Local.iRows,1)
+'		Gui.F_Ticket_Approval.gsfgLines.GetTextMatrix(16,V.Local.iR,V.Local.sPO)
+'		F.Intrinsic.Control.If(V.Local.sPO,<>,"")
+'			F.Intrinsic.Math.Add(V.Local.iUB,1,V.Local.iUB)
+'			F.Intrinsic.Control.If(V.Local.iUB,=,0)
+'				V.Local.sPOsLoaded.Redim(0,0)
+'			F.Intrinsic.Control.Else
+'				V.Local.sPOsLoaded.RedimPreserve(0,V.Local.iUB)
+'			F.Intrinsic.Control.EndIf
+'			V.Local.sPOsLoaded(v.Local.iUB).Set(V.Local.sPO)
+'		F.Intrinsic.Control.EndIf
+'	F.Intrinsic.Control.Next(V.Local.iR)
+'
+'	F.Intrinsic.String.Split(V.global.POsExceeded,"!*!",V.Local.sPOsExceed)
+'	F.Intrinsic.Control.For(V.Local.iC,0,V.Local.sPOsExceed.UBound,1)
+'		F.Intrinsic.String.Split(V.Local.sPOsExceed(v.Local.iC),"*!*",V.Local.sPO)
+'		F.Intrinsic.Hash.LookupByKey("htPOs",V.Local.sPO(0),True,V.Local.sPOHash)
+'		F.Intrinsic.Control.If(V.Local.sPOHash,<>,"")
+'			F.Intrinsic.String.Split(V.Local.sPOHash,"*!*",V.Local.sPOHash)
+'			F.Intrinsic.Control.For(V.Local.iC2,0,V.Local.sPOsLoaded.UBound,1)
+'				F.Intrinsic.Control.If(V.Local.sPO(0),=,V.Local.sPOsLoaded(v.Local.iC2))
+'					F.Intrinsic.Hash.LookupByKey("htCustomer",V.Local.sPOHash(3),True,V.Local.sCustomer)
+'					F.Intrinsic.Control.If(V.Local.sCustomer,<>,"")
+'						F.Intrinsic.String.Format(V.Local.sPO(1),"#####0.00",V.Local.fApplied)
+'						F.Intrinsic.String.Concat(V.Local.sQuery,V.Ambient.NewLine,V.Local.sPOHash(0)," - ",V.Local.sCustomer,": $",V.Local.fApplied,V.Local.sQuery)
+'					F.Intrinsic.Control.EndIf
+'					F.Intrinsic.Control.ExitFor(V.Local.iC2)
+'				F.Intrinsic.Control.EndIf
+'			F.Intrinsic.Control.Next(V.Local.iC2)
+'		F.Intrinsic.Control.EndIf
+'	F.Intrinsic.Control.Next(V.Local.iC)
+'
+'	F.Intrinsic.String.Concat(V.Local.sQuery,V.Ambient.NewLine,V.ambient.newline,"Do you want to return to the previous lines to edit?",V.Local.sQuery)
+'	F.Intrinsic.UI.Msgbox(V.Local.sQuery,"POs Exceeded",4,V.Local.sRet)
+'
+'	F.Intrinsic.Control.If(V.Local.sRet,=,6)
+'		Gui.F_Ticket_Approval.drpCustomer.Text(V.Screen.F_Ticket_Approval!drpCustomer.MetaData0)
+'		Gui.F_Ticket_Approval.drpEmployee.Text(V.Screen.F_Ticket_Approval!drpEmployee.MetaData0)
+'	F.Intrinsic.Control.EndIf
+'F.Intrinsic.Control.EndIf
+'
+'
+'
+
+Program.Sub.ExceedWarning.End
+
+Program.Sub.Billing.Start
+'Calculates the current billing value for a detail record within the detail screen
+V.Local.fBilling.Declare(Float)
+V.Local.fRate.Declare(Float)
+V.Local.fHours.Declare(Float)
+V.Local.bNumeric.Declare(Boolean)
+F.Intrinsic.Control.If(V.Screen.F_Extra!txtLine.text,<>,"")
+F.Intrinsic.Control.AndIf(V.Screen.F_Extra!txtLine.metadata0,<>,"")
+	F.Intrinsic.Math.IsNumeric(V.Screen.F_Extra!txtRate.Text,V.Local.bNumeric)
+	F.Intrinsic.Control.If(V.Local.bNumeric,=,True)
+		V.Local.fRate.Set(V.Screen.F_Extra!txtRate.Text)
+
+		F.Intrinsic.Control.If(V.Screen.F_Extra!txtLine.MetaData1,=,"Hours")
+			F.Intrinsic.Math.IsNumeric(V.Screen.F_Extra!txtHours.MetaData1,V.Local.bNumeric)
+			F.Intrinsic.Control.If(V.Local.bNumeric,=,True)
+				V.Local.fHours.Set(V.Screen.F_Extra!txtHours.MetaData1)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Math.IsNumeric(V.Screen.F_Extra!txtBValue.Text,V.Local.bNumeric)
+			F.Intrinsic.Control.If(V.Local.bNumeric,=,True)
+				V.Local.fHours.Set(V.Screen.F_Extra!txtBValue.Text)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+
+		F.Intrinsic.Math.Mult(V.Local.fHours,V.Local.fRate,V.Local.fBilling)
+		Gui.F_Extra.txtBilling.Text(V.Local.fBilling)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+Program.Sub.Billing.End
+
+program.sub.txtbvalue_lostfocus.start
+F.Intrinsic.Control.CallSub("Billing")
+
+program.sub.txtbvalue_lostfocus.end
+
+
